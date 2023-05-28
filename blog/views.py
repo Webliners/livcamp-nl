@@ -1,12 +1,16 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import Post
 
 # Create your views here.
 
 #Base View
-def base_view(request):
-    return render(request, 'base.html')
+#def base_view(request):
+#    return render(request, 'base.html')
+
+class BaseView(TemplateView):
+    model = Post
+    template_name = 'base.html'
 
 #Blog Overview
 #def blog_overview(request):
