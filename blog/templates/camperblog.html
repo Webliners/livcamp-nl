@@ -52,7 +52,9 @@
                                         {% for post in object_list %}
                                         <div class="col-md-6 col-xl-4 mb-5">
                                         <a class="card post-preview lift h-100" href="{% url 'blogpost' post.slug %}">
-                                            <img class="card-img-top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt="..." />
+                                            {% if post.header_image %}
+                                            <img class="card-img-top" src="{{ post.header_image.url }}" alt="..." />
+                                            {% endif %}
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ post.title }}</h5>
                                                 <p class="card-text">Expose the truth, problem-solvers impact mobilized green spaces.</p>

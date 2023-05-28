@@ -8,8 +8,9 @@
                             <div class="row gx-5 justify-content-center">
                                 <div class="col-lg-10 col-xl-8">
                                     <div class="single-post">
-                                        <h1>{{ post.title }}</h1>
-                                        <p class="lead">Empower communities and energize engaging ideas; scale and impact do-gooders while disruptring industries. Venture philanthropy benefits corporations and people by moving the needle.</p>
+                                        {% if post.header_image %}
+                                        <img class="img-fluid mb-2 rounded" src="{{ post.header_image.url }}" alt="gratis camperplaatsen in nederland" />
+                                        {% endif %}
                                         <div class="d-flex align-items-center justify-content-between mb-5">
                                             <div class="single-post-meta me-4">
                                                 <img class="single-post-meta-img" src="assets/img/illustrations/profiles/profile-1.png" />
@@ -26,8 +27,7 @@
                                                 <a href="#!"><i class="fas fa-bookmark fa-fw"></i></a>
                                             </div>
                                         </div>
-                                        <img class="img-fluid mb-2 rounded" src="https://source.unsplash.com/vZJdYl5JVXY/990x540" />
-                                        <div class="small text-gray-500 text-center">Photo Credit: Unsplash</div>
+                                        <h1 class="text-center py-2">{{ post.title }}</h1>
                                         <div class="single-post-text my-5">
                                             {{ post.body }}
                                             <hr class="my-5" />
