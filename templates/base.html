@@ -1,0 +1,457 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block title %}Livcamp{% endblock %}</title>
+        <link href="{% static 'css/styles.css' %} " rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}" />
+        <link rel="stylesheet" type="text/css" href="dist/device-mockups.min.css">
+        <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="layoutDefault">
+            <div id="layoutDefault_content">
+                <main>
+                <!-- Navbar-->
+                    <nav class="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
+                        <div class="container px-5">
+                            <!-- Brand logo -->
+                            <nav class="navbar navbar-light">
+                                <a class="navbar-brand" href="{% url 'base' %}">
+                                <img src="{% static 'assets/img/logo/livcamp.svg' %}" width="80px" height="80px" alt="livcamp-logo">
+                                </a>
+                            </nav>
+                            <!-- Menuitems -->
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ms-auto me-lg-5">
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'overlivcamp' %}">Over ons</a></li>
+                                    <li class="nav-item dropdown  no-caret">
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdownDemos" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Diensten
+                                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up me-lg-n25 me-xl-n15" aria-labelledby="navbarDropdownDemos">
+                                            <div class="row g-0">
+                                                <div class="col-lg-7 p-lg-5">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <h6 class="dropdown-header text-primary">Diensten</h6>
+                                                            <a class="dropdown-item" href="{% url 'lidmaatschap' %}">Lidmaatschap</a>
+                                                            <a class="dropdown-item" href="{% url 'app' %}">Camperplaatsen app</a>
+                                                            <a class="dropdown-item" href="{% url 'camperverzekering' %}">Camperverzekering</a>
+                                                            <a class="dropdown-item" href="{% url 'campertraining' %}">Campertraining</a>
+                                                            <a class="dropdown-item" href="{% url 'reisadvies' %}">Camperreisadvies</a>
+                                                            <a class="dropdown-item" href="{% url 'camperreizen' %}">Camperreizen</a>
+                                                            <a class="dropdown-item" href="{% url 'camperroute' %}">Camperroutes</a>
+                                                            <div class="dropdown-divider border-0"></div>
+                                                            <h6 class="dropdown-header text-primary">Producten</h6>
+                                                            <a class="dropdown-item" href="{% url 'reisdagboek' %}">Camper reisdagboek</a>
+                                                            <a class="dropdown-item" href="{% url 'campershop' %}">Campershop</a>
+                                                            <div class="dropdown-divider border-0"></div>
+                                                            <h6 class="dropdown-header text-primary">Inspiratie</h6>
+                                                            <a class="dropdown-item" href="{% url 'camperblog' %}">Camperblog</a>
+                                                            <a class="dropdown-item" href="{% url 'base' %}">Themalijsten</a>
+                                                            <div class="dropdown-divider border-0 d-lg-none"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                                </ul>
+                                <a class="btn fw-500 ms-lg-4 btn-warning" href="{% url 'app' %}">
+                                    Livcamp app
+                                    <i class="ms-2" data-feather="arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+
+                    {% block content %}
+
+
+                <!-- Page Header-->
+                    <!--<header class="page-header-ui page-header-light py-lg-5 bg-light"> -->
+                    <header class="page-header-ui page-header-ui-light bg-img-cover overlay-20" style="background-image: url('{% static 'assets/img/headers/livcamp-app.jpg'%}');">
+                        <div class="page-header-ui-content">
+                            <div class="container px-5">
+                                <div class="row gx-5 align-items-center">
+                                    <div class="col-lg-7">
+                                        <h1 class="page-header-ui-title text-white">Leef het avontuur!</h1>
+                                        <p class="page-header-ui-text text-white mb-5">Mis de mooie camperplekjes en routes niet...</p>
+                                        <a class="btn btn-warning fw-500 me-2" href="{% url 'app' %}">Livcamp app<i class="ms-2" data-feather="arrow-right"></i></a>
+                                        <a class="btn btn-primary text-white fw-500" href="{% url 'camperblog' %}">Ontdek de themalijsten</a>
+                                    </div>
+                                    <!--<div class="col-lg-5 d-none d-lg-block"><img class="img-fluid ps-xl-5" src="{% static 'assets/img/illustrations/creativity.svg' %}" /></div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-white">
+                            <!-- Rounded SVG Border-->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                        </div>
+                    </header>
+
+                <!-- Features -->
+                <section class="bg-white py-10">
+                    <div class="container px-5">
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="text-center">
+                                    <div class="text-xs text-uppercase-expanded text-primary mb-2">Maak van het leven een avontuur!</div>
+                                    <h2 class="mb-5">Wat we doen</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gx-5">
+                            <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up">
+                                <a class="card text-center text-decoration-none h-100 lift" href="{% url 'app' %}">
+                                    <div class="card-body py-5">
+                                        <div class="icon-stack icon-stack-lg custom-bg-grey custom-green mb-4"><i data-feather="smartphone"></i></div>
+                                        <h5>Livcamp app</h5>
+                                        <p class="card-text small">Handige tool voor onderweg, waarmee je de camperplaats vindt.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="100">
+                                <a class="card text-center text-decoration-none h-100 lift" href="#!">
+                                    <div class="card-body py-5">
+                                        <div class="icon-stack icon-stack-lg custom-bg-grey custom-green mb-4"><i data-feather="list"></i></div>
+                                        <h5>Themalijsten</h5>
+                                        <p class="card-text small">Bekijk camperplaatsen bij een jachthaven, aan zee of bij een bos...</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-5" data-aos="fade-up" data-aos-delay="150">
+                                <a class="card text-center text-decoration-none h-100 lift" href="{% url 'reisdagboek' %}">
+                                    <div class="card-body py-5">
+                                        <div class="icon-stack icon-stack-lg custom-bg-grey custom-green mb-4"><i data-feather="book-open"></i></div>
+                                        <h5>Camper reisdagboek</h5>
+                                        <p class="card-text small">Log je avonturen! Want wie van zijn herinnering geniet leeft tweemaal!</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-5 mb-lg-0" data-aos="fade-up">
+                                <a class="card text-center text-decoration-none h-100 lift" href="{% url 'camperroute' %}">
+                                    <div class="card-body py-5">
+                                        <div class="icon-stack icon-stack-lg custom-bg-grey custom-green mb-4"><i data-feather="compass"></i></div>
+                                        <h5>Camperroutes</h5>
+                                        <p class="card-text small">Handige tool voor onderweg, waarmee je de camperplaats vindt die bij je past.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                                <a class="card text-center text-decoration-none h-100 lift" href="{% url 'camperverzekering' %}">
+                                    <div class="card-body py-5">
+                                        <div class="icon-stack icon-stack-lg custom-bg-grey custom-green mb-4"><i data-feather="shield"></i></div>
+                                        <h5>Camperverzekering</h5>
+                                        <p class="card-text small">Voor een onbezorgd camper avontuur! Vraag gratis en vrijblijvend een offerte aan.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                                <a class="card text-center text-decoration-none h-100 lift" href="{% url 'camperreizen' %}">
+                                    <div class="card-body py-5">
+                                        <div class="icon-stack icon-stack-lg custom-bg-grey custom-green mb-4"><i data-feather="globe"></i></div>
+                                        <h5>Camperreizen</h5>
+                                        <p class="card-text small">Beleef in kleine groepen onvergetelijke avonturen!</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- About Livcamp -->    
+                    <section class="bg-img-cover overlay overlay-60 " style="background-image: url('{% static 'assets/img/headers/over-livcamp.jpg'%}');">
+                        <div class="container px-5 position-relative">
+                            <div class="row gx-5 justify-content-center">
+                                <div class="col-lg-10">
+                                    <div class=" text-center py-1 my-10 px-10 text-white">
+                                        <h2 class="custom-title text-white">Over Livcamp</h2>
+                                        Mijn <span class="text-primary">camper avontuur</span> begon in 2015. Ik nam ontslag, zegde mijn huur op, verkocht bijna al mijn spullen en ging met de camper voor onbepaalde tijd op reis.<br><br>
+                                        In de afgelopen jaren heb ik op meer dan 1.000 camperplekken overnacht en heb ik meer dan 50.000 kilometer door Europa gereden. Een reis die ik zo weer over zou doen!<br><br>
+                                        Na 5 jaar fulltime reizen ben ik in 2020 gestart met het Livcamp. Met dit platform wil ik mijn enthousiasme delen, <span class="text-primary"> het gevoel van vrijheid en leven </span> doorgeven en mede camperaars verder op weg helpen.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <!-- Latest Posts-->
+
+                <section class="bg-light py-10">
+                    <div class="container px-5">
+                        <h2 class="custom-title text-center pb-5">Camperblog</h2>
+                        <!-- Last Post-->
+                        <a class="card post-preview post-preview-featured lift mb-5 overflow-hidden" href="">
+                            <div class="row g-0">
+                                <div class="col-lg-5"><div class="post-preview-featured-img" style="background-image: url('https://source.unsplash.com/vZJdYl5JVXY/660x360')"></div></div>
+                                <div class="col-lg-7">
+                                    <div class="card-body">
+                                        <div class="py-5">
+                                            <h5 class="card-title">Boots on the Ground, Inclusive Thought Provoking Ideas</h5>
+                                            <p class="card-text">Empower communities and energize engaging ideas; scale and impact do-gooders while disruptring industries. Venture philanthropy benefits corporations and people by moving the needle.</p>
+                                        </div>
+                                        <hr />
+                                        <div class="post-preview-meta">
+                                            <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-1.png" />
+                                            <div class="post-preview-meta-details">
+                                                <div class="post-preview-meta-details-name">Valerie Luna</div>
+                                                <div class="post-preview-meta-details-date">Feb 5 &middot; 6 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Posts-->
+                             <div class="row gx-5">
+                                    {% for post in object_list %}
+                                    <div class="col-md-6 col-xl-4 mb-5">
+                                    <a class="card post-preview lift h-100" href="{% url 'blogpost' post.pk %}">
+                                        <img class="card-img-top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt="..." />
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ post.title }}</h5>
+                                            <p class="card-text">Expose the truth, problem-solvers impact mobilized green spaces.</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="post-preview-meta">
+                                                <img class="post-preview-meta-img" src="{% static 'assets/img/illustrations/profiles/profile-2.png' %}" />
+                                                <div class="post-preview-meta-details">
+                                                    <div class="post-preview-meta-details-name">{{ post.author }}</div>
+                                                    <div class="post-preview-meta-details-date">Feb 4 &middot; 5 min read</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            {% endfor %}
+
+
+
+
+
+                            <div class="col-md-6 col-xl-4 mb-5">
+                                <a class="card post-preview lift h-100" href="#!">
+                                    <img class="card-img-top" src="https://source.unsplash.com/hGV2TfOh0ns/660x360" alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Save the World, Social Entrepreneur</h5>
+                                        <p class="card-text">Contextualize co-creation and do good while building your startup.</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="post-preview-meta">
+                                            <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-3.png" />
+                                            <div class="post-preview-meta-details">
+                                                <div class="post-preview-meta-details-name">Alicia Allen</div>
+                                                <div class="post-preview-meta-details-date">Feb 3 &middot; 7 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-xl-4 mb-5">
+                                <a class="card post-preview lift h-100" href="#!">
+                                    <img class="card-img-top" src="https://source.unsplash.com/9l_326FISzk/660x360" alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Design Thinking Benefits Corporation Thought Leadership</h5>
+                                        <p class="card-text">Global changemakers, a state of play releives stress and creates inspirational work environments.</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="post-preview-meta">
+                                            <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-4.png" />
+                                            <div class="post-preview-meta-details">
+                                                <div class="post-preview-meta-details-name">Mahesh Kumar</div>
+                                                <div class="post-preview-meta-details-date">Feb 1 &middot; 4 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-xl-4 mb-5">
+                                <a class="card post-preview lift h-100" href="#!">
+                                    <img class="card-img-top" src="https://source.unsplash.com/oqStl2L5oxI/660x360" alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Collaborative Consumption, Human-Centered Technology Thought Leader Systems</h5>
+                                        <p class="card-text">Milestones theory of change, an effective paradigm, exposes the truth and best practices to uplift equal opportunity.</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="post-preview-meta">
+                                            <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-5.png" />
+                                            <div class="post-preview-meta-details">
+                                                <div class="post-preview-meta-details-name">William Cole</div>
+                                                <div class="post-preview-meta-details-date">Jan 30 &middot; 12 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-xl-4 mb-5">
+                                <a class="card post-preview lift h-100" href="#!">
+                                    <img class="card-img-top" src="https://source.unsplash.com/Oalh2MojUuk/660x360" alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Co-create, Empower - Moving the Needle on Investor Interests</h5>
+                                        <p class="card-text">Scalable efficient systems and thinking as a social entrepreneur creates a transparent, targeted vison.</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="post-preview-meta">
+                                            <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-1.png" />
+                                            <div class="post-preview-meta-details">
+                                                <div class="post-preview-meta-details-name">Valerie Luna</div>
+                                                <div class="post-preview-meta-details-date">Jan 29 &middot; 4 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-xl-4 mb-5">
+                                <a class="card post-preview lift h-100" href="#!">
+                                    <img class="card-img-top" src="https://source.unsplash.com/-uHVRvDr7pg/660x360" alt="..." />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Inclusive Shared Units of Analysis</h5>
+                                        <p class="card-text">Commit to inspiring social capital, social capital inspires the body and the mind.</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="post-preview-meta">
+                                            <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-6.png" />
+                                            <div class="post-preview-meta-details">
+                                                <div class="post-preview-meta-details-name">Amy Love</div>
+                                                <div class="post-preview-meta-details-date">Jan 25 &middot; 7 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pagination-blog justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#!" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#!">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#!">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#!">3</a></li>
+                                <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
+                                <li class="page-item"><a class="page-link" href="#!">12</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#!" aria-label="Next"><span aria-hidden="true">»</span></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+
+                <!-- Newsletter-->
+                    <div class="page-header-ui page-header-light py-lg-5 bg-white py-5">
+                        <div class="page-header-ui-content">
+                            <div class="container px-5">
+                                <div class="row gx-5 align-items-center">
+                                    <div class="col-lg-7">
+                                        <h2 class="page-header-ui-title">Blijf op de hoogte van leuke nieuwtjes! </h2>
+                                        <p class="page-header-ui-text mb-5">En mooie camperplaatsen en camperroutes.</p>
+                                        <form class="row row-cols-1 row-cols-md-auto g-3 align-items-center mb-3">
+                                            <div class="col flex-grow-1">
+                                                <label class="sr-only" for="inputEmail">Je emailadres...</label>
+                                                <input class="form-control form-control-solid w-100" id="inputEmail" type="email" placeholder="Je emailadres..." />
+                                            </div>
+                                            <div class="col"><button class="btn btn-primary fw-500" type="submit">Inschrijven</button></div>
+                                        </form>
+                                        <p class="page-header-ui-text small mb-0">
+                                            Door je aan te melden, ga je akkoord met onze
+                                            <a href="#!">algemene voorwaarden</a>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-5 d-none d-lg-block"><img class="img-fluid ps-xl-5" src="{% static 'assets/img/illustrations/creativity.svg'%}" /></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Rounded SVG Border-->
+                        <div class="svg-border-rounded text-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                        </div>
+                    </section>
+                </main>
+            </div>
+            {% endblock content %}
+            <div id="layoutDefault_footer">
+                <footer class="footer pt-10 pb-5 mt-auto bg-dark footer-dark">
+                    <div class="container px-5">
+                        <div class="row gx-5">
+                            <div class="col-lg-3">
+                                <div class="footer-brand">Livcamp</div>
+                                <div class="mb-3">Volg ons op:</div>
+                                <div class="icon-list-social mb-5">
+                                    <a class="icon-list-social-link" href="https://www.instagram.com/livcamp.nl/" target='_blank'><i class="fab fa-instagram"></i></a>
+                                    <a class="icon-list-social-link" href="https://www.facebook.com/livcamp.nl" target='_blank'><i class="fab fa-facebook"></i></a>
+                                    <a class="icon-list-social-link" href="https://www.youtube.com/channel/UCTw9ojC-CDZfbUQSgSA2aPw" target='_blank'><i class="fab fa-youtube"></i></a>
+                                    <a class="icon-list-social-link" href="https://nl.pinterest.com/livcampnl" target='_blank'><i class="fab fa-pinterest"></i></a>
+                                    <a class="icon-list-social-link" href="https://www.linkedin.com/company/67935767/admin/" target='_blank'><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="row gx-5">
+                                    <div class="col-lg-4 col-md-6 mb-5">
+                                        <div class="text-uppercase-expanded text-xs mb-4">Navigatie</div>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><a href="{% url 'overlivcamp' %}">Over Livcamp</a></li>
+                                            <li class="mb-2"><a href="{% url 'partners' %}">Partners</a></li>
+                                            <li class="mb-2"><a href="{% url 'voorbedrijven' %}">Voor bedrijven</a></li>
+                                            <li class="mb-2"><a href="{% url 'voorcamperplaatsen' %}">Voor camperplaatsen</a></li>
+                                            <li class="mb-2"><a href="{% url 'vacatures' %}">Vacatures</a></li>
+                                            <li class="mb-2"><a href="{% url 'contact' %}">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                                        <div class="text-uppercase-expanded text-xs mb-4">Diensten</div>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><a href="{% url 'lidmaatschap' %}">Lidmaatschap</a></li>
+                                            <li class="mb-2"><a href="{% url 'app' %}">Camperplaatsen app</a></li>
+                                            <li class="mb-2"><a href="{% url 'camperverzekering' %}">Camperverzekering</a></li>
+                                            <li class="mb-2"><a href="{% url 'campertraining' %}">Campertraining</a></li>
+                                            <li class="mb-2"><a href="{% url 'reisadvies' %}">Camper reisadvies</a></li>
+                                            <li class="mb-2"><a href="{% url 'camperreizen' %}">Camperreizen</a></li>
+                                            <li class="mb-2"><a href="{% url 'camperroute' %}">Camperroutes</a></li>
+                                            <li class="mb-2"><a href="{% url 'reisdagboek' %}">Camper reisdagboek</a></li>
+                                            <li class="mb-2"><a href="{% url 'campershop' %}">Campershop</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                                        <div class="text-uppercase-expanded text-xs mb-4">Contactgegevens</div>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Livcamp</li>
+                                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Oostercluft 420</li>
+                                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 8332 DR Steenwijk</li>
+                                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@livcamp.nl</li>
+                                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> KVKnummer: 75798271</li>
+                                            <li class="mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> BTWnummer: NL860399941B01</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-5" />
+                        <div class="row gx-5 align-items-center">
+                            <div class="col-md-6 small">Copyright &copy; Livcamp 2019 - 2023</div>
+                            <div class="col-md-6 text-md-end small">
+                                <a href="{% url 'privacypolicy' %}">Privacy Policy</a>
+                                &middot;
+                                <a href="{% url 'algemenevoorwaarden' %}">Algemene voorwaarden</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </body>
+</html>

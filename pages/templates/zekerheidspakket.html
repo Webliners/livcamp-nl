@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content %}
+                    <!-- Page Header-->
+                    <header class="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-40" style="background-image: url('{% static 'assets/img/camperverzekering/camperverzekering-zekerheidspakket.jpg'%}');">
+                        <div class="page-header-ui-content py-5 position-relative">
+                            <div class="container px-5">
+                                <div class="row gx-5 justify-content-center">
+                                    <div class="col-xl-8 col-lg-10 text-center">
+                                        <div data-aos="fade-up">
+                                            <h1 class="page-header-ui-title">Camper zekerheidspakket</h1>
+                                            <p class="page-header-ui-text">Een uitgekiende combinatie van verzekeringen</p>
+                                        </div>
+                                        <a class="btn btn-warning fw-500" href="{% url 'offerte' %}" data-aos="fade-up" data-aos-delay="100">Gratis offerte aanvragen</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-white">
+                            <!-- Rounded SVG Border-->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                        </div>
+                    </header>
+                    <!--Een uitgekiende combinatie van verzekeringen-->
+                    <section class="bg-white py-10" id="get-started">
+                        <div class="container px-5">
+                            <h2>Een uitgekiende combinatie van verzekeringen</h2>
+                            <p class="card-text fw-light mb-4">Het Camper ZekerheidsPakket is een uitgekiende combinatie van verzekeringen die goed op elkaar aansluiten en die ervoor zorgen dat je zorgeloos op reis kunt. Bij onverhoopte schade hoef je slechts jouw persoonlijke adviseur in te schakelen of Aveco te bellen.</p>
+                            <h3>Kies zelf welke verzekeringen je mee wilt nemen:</h3>
+                                <ul class="card-text fw-light mb-4">
+                                    <li>Camperverzekering</li>
+                                    <li>Pechhulp+</li>
+                                    <li>Schadeverzekering inzittenden</li>
+                                    <li>Rechtsbijstandverzekering</li>
+                                    <li>Doorlopende reisverzekering</li>
+                                </ul>    
+                            <h3>En ontvang automatisch pakketkorting:</h3>
+                            <ul class="card-text fw-light mb-4">
+                                <li>Bij 3 of meer verzekeringen ontvang je 5% pakketkorting</li>
+                                <li>Bij het afsluiten van alle verzekeringen ontvang je 7% pakketkorting</li>
+                            </ul>  
+                        </div>
+                    </section>
+                    <!--Quote-->
+                    <section class="bg-img-cover overlay overlay-60 py-5" style="background-image: url('{% static 'assets/img/camperverzekering/aveco-verzekeringen.jpg'%}');">
+                        <div class="container px-5 position-relative">
+                            <div class="row gx-5 justify-content-center">
+                                <div class="col-lg-10">
+                                    <div class="display-6 text-center py-5 my-10 text-white">
+                                        <span class="text-primary">Unieke polisvoorwaarden</span> en <span class="text-primary">grenzeloze service</span>. Wij zijn niet voor niets al jarenlang <span class="text-primary">marktleider</span>.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--Het pakket bestaat uit-->
+                    <section class="bg-light py-5">
+                        <div class="container px-5 z-1">
+                            <h3 class="text-center">Het pakket bestaat uit:</h3>  
+                            <div class="card mt-5 mb-5" data-aos="fade-right">
+                                <div class="row g-0">
+                                    <div class="col-md-6"><img class="img-fluid" src="{% static 'assets/img/camperverzekering/nieuwe-camper.png' %}" alt="Camperverzekering" /></div>
+                                    <div class="col-md-6">
+                                        <div class="card-body d-flex justify-content-center h-100 flex-column">
+                                            <h3 class="card-title fw-bold text-uppercase mb-2">Camperverzekering</h3>
+                                            <p class="card-text fw-light mb-4">Een camperverzekering met uitgebreide dekking en de volgende voordelen:
+                                                <ul class="card-text fw-light mb-4">
+                                                    <li>Laag standaard eigen risico bij herstel door aangesloten camperbedrijven</li>
+                                                    <li>Uitlenen aan vrienden en familie is toegestaan</li>
+                                                    <li>Inventaris tot € 5.000,- meeverzekerd</li>
+                                                    <li>Gelijkwaardige vervangende camper</li>
+                                                    <li>Repatriëring van de camper bij ziekte</li>
+                                                    <li>365 dagen aaneengesloten reizen met de camper</li>
+                                                    <li>Gunstige bonus/malus ladder</li>
+                                                    <li>Bij luifel- en/of hagelschade geen terugval in no-claimkorting</li>
+                                                    <li>Zowel recreatief gebruik, woon-werk verkeer als privé gebruik zijn standaard toegestaan</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-5" data-aos="fade-left">
+                                <div class="row g-0">
+                                    <div class="col-md-6 order-1 order-md-0">
+                                        <div class="card-body d-flex justify-content-center h-100 flex-column">
+                                            <h3 class="card-title fw-bold text-uppercase mb-2">Pechhulp +</h3>
+                                            <p class="card-text fw-light mb-4">Zo ontvang je hulp bij: 
+                                                <ul class="card-text fw-light mb-4">
+                                                    <li>Een lekke band</li>
+                                                    <li>Uitvallen van de ruitenwissers afhankelijk van de weersomstandigheden</li>
+                                                    <li>Ontbreken van de linker buitenspiegel</li>
+                                                    <li>Afgebroken sleutel in deur- of contactslot</li>
+                                                    <li>Verlies of diefstal van sleutels</li>
+                                                    <li>Tanken van verkeerde brandstof</li>
+                                                    <li>Lege accu door stroomverbruikers</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 order-0 order-md-1"><img class="img-fluid" src="{% static 'assets/img/camperverzekering/camper-zekerheidspakket-pechhulp.png' %}" alt="Pechhulp" /></div>
+                                </div>
+                            </div>
+                            <div class="card mb-5" data-aos="fade-right">
+                                <div class="row g-0">
+                                    <div class="col-md-6"><img class="img-fluid" src="{% static 'assets/img/camperverzekering/camper-zekerheidspakket-schadeverzekering-inzittenden.png' %}" alt="Schadeverzekering" /></div>
+                                    <div class="col-md-6">
+                                        <div class="card-body d-flex justify-content-center h-100 flex-column">
+                                            <h3 class="card-title fw-bold text-uppercase mb-2">Schadeverzekering inzittenden</h3>
+                                            <p class="card-text fw-light mb-4">Stel dat je door een ongeluk met je camper in het ziekenhuis moet worden opgenomen. Je zorgverzekering dekt dan de kosten, maar biedt veelal geen dekking voor gevolgschade, die kan ontstaan uit bijvoorbeeld blijvende invaliditeit. Bij gevolgschade kun je denken aan inkomstenderving doordat je niet meer kunt werken, of aanpassingen in de woning omdat je een traplift nodig hebt. Ook kosten van een geneeskundige behandeling zijn gedekt.</p>
+                                            <p class="card-text fw-light mb-4"> Door het afsluiten van de Schadeverzekering inzittenden heb je dit risico verzekerd tot € 1.000.000,- voor alle inzittenden van de camper, inclusief de bestuurder. De dekking geldt ook bij het in- of uitstappen en tijdens het verrichten van een noodreparatie.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-5" data-aos="fade-left">
+                                <div class="row g-0">
+                                    <div class="col-md-6 order-1 order-md-0">
+                                        <div class="card-body d-flex justify-content-center h-100 flex-column">
+                                            <h3 class="card-title fw-bold text-uppercase mb-2">Rechtsbijstandverzekering</h3>
+                                            <p class="card-text fw-light mb-4">Vaak is in het buitenland het verhalen van schade met je camper moeilijker te regelen. Alleen al door de verschillen in taal, verkeersregels en procedures, maar ook weggedrag en mentaliteit. <strong>De rechtsbijstandverzekering bestaat uit de volgende modules:</strong>
+                                                <ul class="card-text fw-light mb-4">
+                                                    <li>Verkeer;</li>
+                                                    <li>Consument & Wonen;</li>
+                                                    <li>Inkomen;</li>
+                                                    <li>Fiscaal & Vermogen.</li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 order-0 order-md-1"><img class="img-fluid" src="{% static 'assets/img/camperverzekering/camper-zekerheidspakket-rechtsbijstandverzekering.png' %}" alt="Rechtsbijstandverzekering" /></div>
+                                </div>
+                            </div>
+                            <div class="card mb-5" data-aos="fade-right">
+                                <div class="row g-0">
+                                    <div class="col-md-6"><img class="img-fluid" src="{% static 'assets/img/camperverzekering/camper-zekerheidspakket-doorlopende-reisverzekering.png' %}" alt="Doorlopende reisverzekering" /></div>
+                                    <div class="col-md-6">
+                                        <div class="card-body d-flex justify-content-center h-100 flex-column">
+                                            <h3 class="card-title fw-bold text-uppercase mb-2">Doorlopende reisverzekering</h3>
+                                            <p class="card-text fw-light mb-4"><strong>Unieke voordelen van onze reisverzekering:</strong>
+                                                <ul class="card-text fw-light mb-4">
+                                                    <li>Afgestemd op camperreizen en vliegreizen</li>
+                                                    <li>Keuze uit Europa- of Werelddekking</li>
+                                                    <li>365 dagen aaneengesloten dekking voor camperreizen</li>
+                                                    <li>Vrij overnachten met je camper, je hebt geen overnachtingsbewijs nodig</li>
+                                                    <li>Fietsen, sportuitrusting, laptops, tablets en losse navigatiesystemen standaard meeverzekerd</li>
+                                                </ul>
+                                                <strong>De doorlopende reisverzekering van Aveco bestaat uit 4 rubrieken:</strong>
+                                                <ul class="card-text fw-light mb-4">
+                                                    <li>S.O.S.-kosten</li>
+                                                    <li>Medische kosten</li>
+                                                    <li>Reisongevallen</li>
+                                                    <li>Reisbagage</li>
+                                                </ul>
+                                                <strong>Je kunt je reisverzekering uitbreiden met:</strong>
+                                                <ul class="card-text fw-light mb-4">
+                                                    <li>Annuleringsverzekering</li>
+                                                    <li>Wintersportdekking</li>
+                                                </ul>
+                                                </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-white mt-n15">
+                            <!-- Rounded SVG Border-->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                        </div>
+                    </section>
+                    <section class="bg-white py-5">
+                        <div class="container px-5">
+                            <div class="row gx-5 justify-content-center">
+                                <div class="col-xl-6 col-lg-8 col-md-10 text-center my-5 py-5">
+                                </div>
+                            </div>
+                            <!--Contact-->
+                            <div class="card z-1 mb-n10">
+                                <div class="card-body text-center py-5">
+                                    <h2 class="mb-3">Benieuwd wat dit voor jou betekend?</h2>
+                                    <p class="lead text-gray-500 mb-4">Vraag gratis en vrijblijvend een passende offerte aan en bepaal zelf je verzekering en je pakketkorting.</p>
+                                    <a class="btn btn-warning fw-500" href="{% url 'offerte' %}">Gratis offerte aanvragen</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="svg-border-rounded text-dark">
+                            <!-- Rounded SVG Border-->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                        </div>
+                    </section>
+                    {% endblock content %}
