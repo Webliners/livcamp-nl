@@ -8,6 +8,7 @@
                             <div class="row gx-5 justify-content-center">
                                 <div class="col-lg-10 col-xl-8">
                                     <div class="single-post">
+                                        <a href="{% url 'update_post' post.slug %}">Edit</a> | <a href="{% url 'delete_post' post.slug %}">Delete</a>
                                         {% if post.header_image %}
                                         <img class="img-fluid mb-2 rounded" src="{{ post.header_image.url }}" alt="gratis camperplaatsen in nederland" />
                                         {% endif %}
