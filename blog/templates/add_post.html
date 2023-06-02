@@ -21,6 +21,7 @@
                         </div>
                     </header>
                 <!--Blog toevoegen-->
+                {% if user.is_authenticated %}
                 <section>
                     <div class="container px-5 py-10">
                         <div class="row gx-5 justify-content-center">
@@ -34,6 +35,9 @@
                                                     {{ form.as_p}}
                                                     <button class="btn btn-primary">Post</button>
                                                 </form>
+                                                {% else %}
+                                                <p class="text-center py-10">Je hebt geen rechten om deze pagina te bekijken.</p>
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>

@@ -66,6 +66,14 @@
                                         </div>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                                    {% if user.is_authenticated %}
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'add_post' %}">Post toevoegen</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'add_category' %}">Categorie toevoegen</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Uitloggen</a></li>
+                                    {% else %}
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Registreren</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Inloggen</a></li>
+                                    {% endif %}
                                 </ul>
                                 <a class="btn fw-500 ms-lg-4 btn-warning" href="{% url 'app' %}">
                                     Livcamp app
@@ -292,8 +300,6 @@
                                             <li class="mb-2"><a href="{% url 'voorcamperplaatsen' %}">Voor camperplaatsen</a></li>
                                             <li class="mb-2"><a href="{% url 'vacatures' %}">Vacatures</a></li>
                                             <li class="mb-2"><a href="{% url 'contact' %}">Contact</a></li>
-                                            <li class="mb-2"><a href="{% url 'register' %}">Registreer</a></li>
-                                            <li class="mb-2"><a href="{% url 'login' %}">Login</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
