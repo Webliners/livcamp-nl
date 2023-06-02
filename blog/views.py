@@ -10,7 +10,7 @@ from django.urls import reverse_lazy
 #def base_view(request):
 #    return render(request, 'base.html')
 
-class BaseView(TemplateView):
+class BaseView(ListView):
     model = Post
     template_name = 'base.html'
 
@@ -59,7 +59,6 @@ class CategoryOverView(ListView):
         context = super(CategoryOverView, self).get_context_data(*args, **kwargs)
         context["category_menu"] = category_menu
         return context
-
 
 
 #Catogrie bekijken
