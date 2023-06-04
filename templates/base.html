@@ -32,6 +32,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ms-auto me-lg-5">
                                     <li class="nav-item"><a class="nav-link" href="{% url 'overlivcamp' %}">Over ons</a></li>
+                                   <!--Diensten-->
                                     <li class="nav-item dropdown  no-caret">
                                         <a class="nav-link dropdown-toggle" id="navbarDropdownDemos" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Diensten
@@ -65,13 +66,39 @@
                                             </div>
                                         </div>
                                     </li>
+                                    <!--Contact-->
                                     <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                                    <!--Profiel-->
                                     {% if user.is_authenticated %}
-                                    <li class="nav-item"><a class="nav-link" href="{% url 'add_post' %}">Post toevoegen</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{% url 'add_category' %}">Categorie toevoegen</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Uitloggen</a></li>
+                                    <li class="nav-item dropdown  no-caret">
+                                        <a class="nav-link dropdown-toggle" id="navbarDropdownDemos" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Profiel
+                                            <i class="fas fa-chevron-right dropdown-arrow"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end animated--fade-in-up me-lg-n25 me-xl-n15" aria-labelledby="navbarDropdownDemos">
+                                            <div class="row g-0">
+                                                <div class="col-lg-7 p-lg-5">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <h6 class="dropdown-header text-primary">Profiel</h6>
+                                                            {% if user.profile.id %}
+                                                            <a class="dropdown-item" href="{% url 'profilepage' user.profile.id %}">Profielpagina</a>
+                                                            <a class="dropdown-item" href="{% url 'edit_profielpagina' user.profile.id %}">Profiel aanpassen</a>
+                                                            {% else %}
+                                                            <a class="dropdown-item" href="{% url 'create_profilepage' %}">Maak profielpagina</a>
+                                                            {% endif %}
+                                                            <a class="dropdown-item" href="{% url 'edit_profile' %}">Instellingen</a>
+                                                            <a class="dropdown-item" href="{% url 'add_post' %}">Post toevoegen</a>
+                                                            <a class="dropdown-item" href="{% url 'add_category' %}">Categorie toevoegen</a>
+                                                            <a class="dropdown-item" href="{% url 'logout' %}">Uitloggen</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
                                     {% else %}
-                                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Registreren</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Registreren</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Inloggen</a></li>
                                     {% endif %}
                                 </ul>

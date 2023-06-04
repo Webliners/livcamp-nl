@@ -30,7 +30,7 @@
                                  <div class="row gx-5">
                                         {% for post in category_posts %}
                                         <div class="col-md-6 col-xl-4 mb-5">
-                                        <a class="card post-preview lift h-100" href="{% url 'base' %}">
+                                        <a class="card post-preview lift h-100" href="{% url 'blogpost' post.slug %}">
                                             {% if post.header_image %}
                                             <img class="card-img-top" src="{{ post.header_image.url }}" alt="{{ post.title }}" />
                                             {% endif %}

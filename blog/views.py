@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 from .models import Post, Category
 from .forms import PostForm
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -29,6 +30,17 @@ class BlogView(ListView):
 class ArticleView(DetailView):
     model = Post
     template_name = 'blogpost.html'
+    
+    #def get_context_data(self, *args, **kwargs):
+       #category_menu = Category.objects.all()
+       #context = super(ArticleView, self).get_context_data(*args, **kwargs)
+
+       #stuff = get_object_or_404(Post, slug=self.kwargs(['slug']))
+      # total_likes = stuff.total_likes()
+      # context["category_menu"] = category_menu
+      # context["total_likes"] = total_likes
+      ## return context
+    
 
 #BlogArchive
 def blogarchive_view(request):
@@ -78,5 +90,11 @@ class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('camperblog')
+
+#Likes
+#def LikeView(request, slug):
+ #   post = get_object_or_404(Post, id=request.POST.get('post_id'))
+ #   post.likes.add(request.user)
+ #   return HttpResponseRedirect(reverse('blogpost', args=[str(slug)]))
 
 #Themalijsten

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Login{% endblock %}
+{% block title %}Instellingen aanpassen{% endblock %}
 {% load static%}
 
 {% block content %}
@@ -9,8 +9,8 @@
                             <div class="container px-5 text-center">
                                 <div class="row gx-5 justify-content-center">
                                     <div class="col-lg-8">
-                                        <h1 class="page-header-ui-title mb-3">Login</h1>
-                                        <p class="page-header-ui-text">Leuk dat je er bent!</p>
+                                        <h1 class="page-header-ui-title mb-3">Instellingen aanpassen</h1>
+                                        <p class="page-header-ui-text">Blijf up-to-date!</p>
                                     </div>
                                 </div>
                             </div>
@@ -26,13 +26,13 @@
                         <div class="row gx-5 justify-content-center">
                             <div class="col-lg-8">
                                 <div class="card rounded-3 text-dark">
-                                    <div class="card-header text-primary text-center py-4">Login</div>
+                                    <div class="card-header text-primary text-center py-4">Instellingen aanpassen</div>
                                         <div class="card-body">
                                             <div class="form-group">
                                                 <form method="POST">
                                                     {% csrf_token %}
                                                     {{ form.as_p}}
-                                                    <button class="btn btn-primary">Login</button>
+                                                    <button class="btn btn-primary">Updaten</button>
                                                 </form>
                                             </div>
                                         </div>
