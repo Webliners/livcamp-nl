@@ -12,7 +12,7 @@
                                     <div class="col-lg-8">
                                         <h1 class="page-header-ui-title mb-3">Camperblog</h1>
                                         <p class="page-header-ui-text mb-0">Mis de mooie plekjes niet!</p>
-                                        <a href="{% url 'archive' %}" class="btn btn-primary mt-5">Blogarchive</a>
+                                        <!--<a href="{% url 'archive' %}" class="btn btn-primary mt-5">Blogarchive</a>-->
                                     </div>
                                 </div>
                             </div>
@@ -22,32 +22,9 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
                         </div>
                     </header>
-                <!-- Lastest Post-->
+                <!-- Posts -->
                     <section class="bg-light py-10">
                         <div class="container px-5">
-                            <a class="card post-preview post-preview-featured lift mb-5 overflow-hidden" href="">
-                                <div class="row g-0">
-                                    <div class="col-lg-5"><div class="post-preview-featured-img" style="background-image: url('https://source.unsplash.com/vZJdYl5JVXY/660x360')"></div></div>
-                                    <div class="col-lg-7">
-                                        <div class="card-body">
-                                            <div class="py-5">
-                                                <h5 class="card-title">Boots on the Ground, Inclusive Thought Provoking Ideas</h5>
-                                                <p class="card-text">Empower communities and energize engaging ideas; scale and impact do-gooders while disruptring industries. Venture philanthropy benefits corporations and people by moving the needle.</p>
-                                            </div>
-                                            <hr />
-                                            <div class="post-preview-meta">
-                                                <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-1.png" />
-                                                <div class="post-preview-meta-details">
-                                                    <div class="post-preview-meta-details-name">Valerie Luna</div>
-                                                    <div class="post-preview-meta-details-date">Feb 5 &middot; 6 min read</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Posts-->
                                  <div class="row gx-5">
                                         {% for post in object_list %}
                                         <div class="col-md-6 col-xl-4 mb-5">
@@ -77,17 +54,27 @@
                         <!--page navigation-->
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination pagination-blog justify-content-center">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#!" aria-label="Previous"><span aria-hidden="true">«</span></a>
+                                    {% if page_obj.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=1" aria-label="Previous"><span aria-hidden="true">«</span></a>
                                     </li>
-                                    <li class="page-item active"><a class="page-link" href="#!">1</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous"><span aria-hidden="true">Vorige</span></a>
+                                    </li>
+                                    {% endif %}
+                                    <!--<li class="page-item active"><a class="page-link" href="">{{ page_obj.number }}</a></li>
                                     <li class="page-item"><a class="page-link" href="#!">2</a></li>
                                     <li class="page-item"><a class="page-link" href="#!">3</a></li>
                                     <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-                                    <li class="page-item"><a class="page-link" href="#!">12</a></li>
+                                    <li class="page-item"><a class="page-link" href="">{{ page_obj.paginator.num_pages }}</a></li>-->
+                                    {% if page_obj.has_next %}
                                     <li class="page-item">
-                                        <a class="page-link" href="#!" aria-label="Next"><span aria-hidden="true">»</span></a>
+                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next"><span aria-hidden="true">Volgende</span></a>
                                     </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Next"><span aria-hidden="true">»</span></a>
+                                    </li>
+                                    {% endif %}
                                 </ul>
                             </nav>
                         </div>

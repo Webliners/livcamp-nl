@@ -18,7 +18,7 @@
                                         {% endif %}
                                         <div class="d-flex align-items-center justify-content-between mb-5">
                                             <div class="single-post-meta me-4">
-                                                <img class="single-post-meta-img" src="assets/img/illustrations/profiles/profile-1.png" />
+                                                <img class="single-post-meta-img" src="{{ post.author.profile.profile_pic.url }}" />
                                                 <div class="single-post-meta-details">
                                                     <div class="single-post-meta-details-name">{{ post.author }}</div>
                                                     <div class="single-post-meta-details-date">{{ post.published_date }}</div>
@@ -32,17 +32,18 @@
                                                 </form>
                                             </div>    -->
                                             <div class="single-post-meta-links">
-                                                <a href="#!"><i class="fab fa-facebook-f fa-fw"></i></a>
-                                                <a href="#!"><i class="fab fa-instagram fa-fw"></i></a>
-                                                <a href="#!"><i class="fab fa-youtube fa-fw"></i></a>
-                                                <a href="#!"><i class="fab fa-pinterest fa-fw"></i></a>
-                                                <a href="#!"><i class="fas fa-bookmark fa-fw"></i></a>
+                                                <a href="https://www.facebook.com/livcamp.nl"><i class="fab fa-facebook-f fa-fw"></i></a>
+                                                <a href="https://www.instagram.com/livcamp.nl/" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+                                                <a href="https://www.youtube.com/channel/UCTw9ojC-CDZfbUQSgSA2aPw" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+                                                <a href="https://nl.pinterest.com/livcampnl/"><i class="fab fa-pinterest fa-fw"></i></a>
+                                                <!--<a href="#!"><i class="fas fa-bookmark fa-fw"></i></a>-->
                                             </div>
                                         </div>
                                         <h1 class="text-center py-2">{{ post.title }}</h1>
                                         <div class="single-post-text my-5">
                                             {{ post.body|safe }}
                                             <hr class="my-5" />
+
                                         <!--Auteur Profiel-->
                                             <div class="card mb-3">
                                                 <div class="row no-gutters">
@@ -82,6 +83,21 @@
                                                   </div>
                                                 </div>
                                               </div>
+
+                                    <!--Comments
+                                        <h2>Comments...</h2>
+                                        {% if not post.comments.all %}
+                                        No comments yet... <a href="">Add comment</a>
+                                        {% else %}
+                                        <a href="">Add comment</a>
+                                        <br><br>
+                                            {% for comment in post.comments.all %}
+                                            <strong>{{ comment.name }} - {{ comment.date_added}}</strong>
+                                            <br>
+                                            {{ comment.body }}
+                                            <br><br>
+                                            {% endfor %}
+                                        {% endif%}-->
                                               <!--Terug naar camperblog-->
                                             <hr class="my-5" />
                                             <div class="text-center"><a class="btn btn-transparent-dark" href="{% url 'camperblog' %}">Terug naar camperblog</a></div>

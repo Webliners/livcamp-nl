@@ -72,7 +72,7 @@
                                     {% if user.is_authenticated %}
                                     <li class="nav-item dropdown  no-caret">
                                         <a class="nav-link dropdown-toggle" id="navbarDropdownDemos" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Profiel
+                                            Profiel {{ user.first_name }}
                                             <i class="fas fa-chevron-right dropdown-arrow"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end animated--fade-in-up me-lg-n25 me-xl-n15" aria-labelledby="navbarDropdownDemos">
@@ -101,11 +101,11 @@
                                     <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Registreren</a></li>
                                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Inloggen</a></li>
                                     {% endif %}
+                                    <a class="btn fw-500 ms-lg-4 btn-warning" href="{% url 'app' %}">
+                                        Livcamp app
+                                        <i class="ms-2" data-feather="arrow-right"></i>
+                                    </a>
                                 </ul>
-                                <a class="btn fw-500 ms-lg-4 btn-warning" href="{% url 'app' %}">
-                                    Livcamp app
-                                    <i class="ms-2" data-feather="arrow-right"></i>
-                                </a>
                             </div>
                         </div>
                     </nav>
@@ -226,6 +226,7 @@
                         <h2 class="custom-title text-center pb-5">Camperblog</h2>
                             <div class="row gx-5">
                                 {% for post in object_list %}
+                                {% if forloop.counter <= 6 %}
                                 <div class="col-md-6 col-xl-4 mb-5">
                                 <a class="card post-preview lift h-100" href="{% url 'blogpost' post.slug %}">
                                     {% if post.header_image %}
@@ -246,25 +247,9 @@
                                     </div>
                                 </a>
                             </div>
-
+                            {% endif %}
                         {% endfor %}
-
-                    <!--Navigation Blog-->
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination pagination-blog justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#!" aria-label="Previous"><span aria-hidden="true">«</span></a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#!">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#!">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                                <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-                                <li class="page-item"><a class="page-link" href="#!">12</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#!" aria-label="Next"><span aria-hidden="true">»</span></a>
-                                </li>
-                            </ul>
-                        </nav>
+                        <a href="{% url 'camperblog' %}" class="btn btn-primary text-center fw-500">Ontdek meer</a>
                     </div>
                 </section>
 

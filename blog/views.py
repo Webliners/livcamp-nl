@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
-from .models import Post, Category
-from .forms import PostForm
+from .models import Post, Category, Comment
+from .forms import PostForm, CommentForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -23,13 +24,22 @@ class BlogView(ListView):
     model = Post
     template_name = 'camperblog.html'
     # ordering = ['-id']
+    paginate_by = 6
+    #queryset = Post.objects.all()
+
+
+
 
 #BlogPost
 #def blogpost_view(request):
 #    return render(request, 'blogpost.html')
 class ArticleView(DetailView):
     model = Post
+    #form_class = CommentForm
     template_name = 'blogpost.html'
+    #fields = '__all__'
+    #succes_url = reverse_lazy('blogpost')
+
     
     #def get_context_data(self, *args, **kwargs):
        #category_menu = Category.objects.all()
@@ -40,7 +50,26 @@ class ArticleView(DetailView):
       # context["category_menu"] = category_menu
       # context["total_likes"] = total_likes
       ## return context
+
+#class AddCommentView(CreateView):
+ #   model = Comment
+  #  form_class = CommentForm
+   # template_name = 'add_comment.html'
+    #fields = '__all__'
+
+
+    #def form_valid(self, form):
+     #   form.instance.post.id = self.kwargs['pk']
+      #  return super().form_valid(form)
     
+    #success_url = reverse_lazy('base')
+    #return reverse_lazy('detail', kwargs={"pk": self.kwargs['pk']})
+
+    #def get_context_data(self, *args, **kwargs):
+     #   context = super().get_context_data(*args, **kwargs)
+      #  context['comments'] = Comment.objects.all()
+       # return context
+
 
 #BlogArchive
 def blogarchive_view(request):
