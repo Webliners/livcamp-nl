@@ -1,7 +1,29 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 {% load static%}
+    <html lang="nl">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            <meta name="description" property="og:description" content="Samenwerken voor campersucces: Ontdek hoe we jouw camperbedrijf naar nieuwe hoogten kunnen brengen!">
+            <meta name="keywords" content="Camperbedrijven">
+            <meta name="author" content="Melanie Otten" />
+            <meta property="og:url" content="https://livcamp.nl/voor-bedrijven/">
+            <meta property="og:title" content="Vooor camperbedrijven - samen het avontuur aangaan.">
+            <meta property="og:image" content="{% static 'assets/img/algemeen/over-livcamp.jpg'%}">
+            <meta property="og:image:alt" content="Voor camperbedrijven - samen het avontuur aangaan." />
+            <title>{% block title %}Voor camperbedrijven{% endblock %}</title>
+            <link href="{% static 'css/styles.css' %} " rel="stylesheet" />
+            <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}" />
+            <link rel="stylesheet" type="text/css" href="dist/device-mockups.min.css">
+            <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
+        </head>
+        <body>
 
-{% block content %}  
+
+{% include 'includes/navbar.html' %}
+
 <!-- Page Header-->
 <header class="page-header-ui page-header-ui-dark bg-gradient-primary-to-secondary">
     <div class="page-header-ui-content pt-10">
@@ -9,7 +31,7 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8">
                     <h1 class="page-header-ui-title mb-3">Voor camperbedrijven</h1>
-                    <p class="page-header-ui-text">Meer camperaars bereiken?</p>
+                    <p class="page-header-ui-text">Ontdek hoe we jouw camperbedrijf naar nieuwe hoogten kunnen brengen!</p>
                 </div>
             </div>
         </div>
@@ -22,25 +44,26 @@
 <section class="bg-light py-10">
     <div class="container px-5">
         <div class="text-center mb-5">
-            <h2>Simple Pricing</h2>
-            <p class="lead">Easy pricing means no suprises.</p>
+            <h2>Meer camperaars bereiken?</h2>
+            <p class="lead">Bereik meer avonturiers met onze effectieve strategieën!</p>
+            <p class="lead">Coming soon...</p>
         </div>
-        <div class="row gx-5">
+        <!--<div class="row gx-5">
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <div class="card pricing h-100">
                     <div class="card-body p-5">
                         <div class="text-center">
                             <div class="badge bg-light text-dark rounded-pill badge-marketing badge-sm">Free</div>
                             <div class="pricing-price">
-                                <sup>$</sup>
-                                0
-                                <span class="pricing-price-period">/mo</span>
+                                <sup>€</sup>
+                                75
+                                <span class="pricing-price-period">/per keer</span>
                             </div>
                         </div>
                         <ul class="fa-ul pricing-list">
                             <li class="pricing-list-item">
                                 <span class="fa-li"><i class="far fa-check-circle text-teal"></i></span>
-                                <span class="text-dark">1 user</span>
+                                <span class="text-dark">1x nieuwsbrief</span>
                             </li>
                             <li class="pricing-list-item">
                                 <span class="fa-li"><i class="far fa-check-circle text-teal"></i></span>
@@ -76,9 +99,9 @@
                         <div class="text-center">
                             <div class="badge bg-primary-soft rounded-pill badge-marketing badge-sm text-primary">Standard</div>
                             <div class="pricing-price">
-                                <sup>$</sup>
-                                19
-                                <span class="pricing-price-period">/mo</span>
+                                <sup>€</sup>
+                                475
+                                <span class="pricing-price-period">/per jaar</span>
                             </div>
                         </div>
                         <ul class="fa-ul pricing-list">
@@ -128,8 +151,9 @@
         <div class="mt-5 text-center"><a class="btn btn-primary fw-500" href="#!">Get Started</a></div>
     </div>
 </section>
-<hr class="my-0" />
-<section class="bg-light py-10">
+<hr class="my-0" />-->
+
+<!--<section class="bg-light py-10">
     <div class="container px-5">
         <div class="text-center mb-5">
             <h2>One plan, no hassle</h2>
@@ -344,47 +368,20 @@
         </div>
         <div class="mt-5 text-center"><a class="btn btn-primary fw-500" href="#!">Get Started</a></div>
     </div>
-</section>
+</section>-->
 <hr class="my-0" />
 <section class="bg-light pt-10">
     <div class="container px-5">
         <div class="row gx-5 align-items-center mb-10">
             <div class="col-lg-6">
-                <div class="h4 fw-normal">Ready to get started?</div>
-                <p class="lead mb-0 text-gray-500">Get in touch or create an account.</p>
+                <div class="h4 fw-normal">Samenwerken?</div>
+                <p class="lead mb-0 text-gray-500"></p>
             </div>
             <div class="col-lg-6 text-lg-end">
-                <a class="btn btn-primary fw-500 me-3 my-2" href="#!">Contact Sales</a>
-                <a class="btn btn-white fw-500 shadow my-2" href="#!">Create Account</a>
+                <a class="btn btn-primary fw-500 me-3 my-2" href="{% url 'contact' %}">Ja heel graag!</a>
+                <!--<a class="btn btn-white fw-500 shadow my-2" href="#!">Create Account</a>-->
             </div>
         </div>
-        <div class="row gx-5">
-            <div class="col-lg-6 z-1 mb-5 mb-lg-n5">
-                <a class="card text-decoration-none h-100 lift" href="#!">
-                    <div class="card-body py-5">
-                        <div class="d-flex align-items-center">
-                            <div class="icon-stack icon-stack-xl bg-primary text-white flex-shrink-0"><i data-feather="activity"></i></div>
-                            <div class="ms-4">
-                                <h5 class="text-primary">Work smarter, not harder</h5>
-                                <p class="card-text text-gray-600">Learn more about how our product can save you time and effort in the long run!</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-6 z-1 mb-10 mb-lg-n5">
-                <a class="card text-decoration-none h-100 lift" href="#!">
-                    <div class="card-body py-5">
-                        <div class="d-flex align-items-center">
-                            <div class="icon-stack icon-stack-xl bg-secondary text-white flex-shrink-0"><i data-feather="code"></i></div>
-                            <div class="ms-4">
-                                <h5 class="text-secondary">Built for developers</h5>
-                                <p class="card-text text-gray-600">Our components, utilities, and layouts are built with developers in mind.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
         </div>
     </div>
     <div class="svg-border-rounded text-dark">
@@ -392,4 +389,19 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
     </div>
 </section>
-{% endblock content %}
+
+
+{% include 'includes/footer.html' %}
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+            <script src="{% static 'js/scripts.js' %}"></script>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                AOS.init({
+                    disable: 'mobile',
+                    duration: 600,
+                    once: true,
+                });
+            </script>
+        </body>
+    </html>

@@ -1,7 +1,29 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 {% load static%}
+    <html lang="nl">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            <meta name="description" property="og:description" content="Ontdek de voordelen van ons camperlidmaatschap en maak deel uit van een gepassioneerde gemeenschap van kampeerliefhebbers. Profiteer van exclusieve kortingen, speciale evenementen, waardevolle reistips en nog veel meer." />
+            <meta name="keywords" content="Lidmaatschap">
+            <meta name="author" content="Melanie Otten" />
+            <meta property="og:url" content="https://livcamp.nl/lidmaatschap/" />
+            <meta property="og:title" content="Lidmaatschap - laat het avontuur beginnen!" />
+            <meta property="og:image" content="{% static 'assets/img/lidmaatschap/lidmaatschap.jpg' %}"/>
+            <meta property="og:image:alt" content="Lidmaatschap" />
+            <title>{% block title %}Lidmaatschap{% endblock %}</title>
+            <link href="{% static 'css/styles.css' %} " rel="stylesheet" />
+            <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}" />
+            <link rel="stylesheet" type="text/css" href="dist/device-mockups.min.css">
+            <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
+        </head>
+        <body>
 
-{% block content %}
+
+{% include 'includes/navbar.html' %}
+
 <!-- Page Header-->
 <header class="page-header-ui page-header-ui-light bg-white">
     <div class="page-header-ui-content">
@@ -9,9 +31,9 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-xl-8 col-lg-10 text-center mb-4" data-aos="fade">
                     <h1 class="page-header-ui-title">Lidmaatschap</h1>
-                    <p class="page-header-ui-text">Build a marketing site for your desktop app with this easy to use layout included with SB UI Kit Pro</p>
-                    <a class="btn btn-primary fw-500 me-2" href="#!">Get Started</a>
-                    <a class="btn btn-link fw-500" href="#!">Learn More</a>
+                    <p class="page-header-ui-text">"Ontdek een wereld van camperavonturen!</p>
+                    <a class="btn btn-primary fw-500 me-2" href="#!">Coming soon</a>
+                    <a class="btn btn-link fw-500" href="#!">Nog even geduld...</a>
                 </div>
             </div>
         </div>
@@ -21,14 +43,21 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
     </div>
 </header>
+
+<!--Lidmaatschap -->
 <section class="bg-light pb-10 pt-1">
     <div class="container px-5">
         <div class="device-laptop text-gray-200 mt-n10" data-aos="fade-up">
             <svg class="device-container" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="83.911 298.53 426.962 243.838"><path d="M474.843 516.208V309.886c0-6.418-4.938-11.355-11.354-11.355H131.791c-6.417 0-11.354 4.938-11.354 11.355v206.816H83.911v13.326c4.938 7.896 31.098 12.34 40.969 12.34h345.024c10.366 0 36.526-4.936 40.969-12.34v-13.326h-36.03v-.494zM134.26 313.341h326.762v203.361H134.26V313.341z"></path></svg>
-            <img class="device-screenshot" src="assets/img/demo/app-desktop-demo-screenshot.jpg" />
+            <img class="device-screenshot" src="{% static 'assets/img/lidmaatschap/lidmaatschap.jpg' %}" />
         </div>
     </div>
 </section>
+<div class="py-10">
+    <h2 class="display-6 fw-500 text-center mb-5">Binnenkort meer over onze vernieuwde lidmaatschappen</h2>
+</div>
+
+<!--
 <section class="bg-light pb-10 pt-0">
     <div class="container px-5">
         <div class="row gx-5 brands text-gray-500 align-items-center">
@@ -104,7 +133,7 @@
     </div>
     <div class="svg-border-rounded text-white">
         <!-- Rounded SVG Border-->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
     </div>
 </section>
 <section class="bg-white py-10">
@@ -359,7 +388,7 @@
     </div>
     <div class="svg-border-rounded text-dark">
         <!-- Rounded SVG Border-->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
     </div>
 </section>
 <section class="bg-dark pb-10 pt-15">
@@ -414,10 +443,10 @@
 </section>
 <section class="bg-img-cover overlay overlay-primary overlay-80 pt-15" style="background-image: url('https://source.unsplash.com/e3OUQGT9bWU/1400x900')">
     <!-- Spacer for the image section-->
-    <div style="height: 35vh"></div>
-    <div class="svg-border-rounded text-white">
+    <!--<div style="height: 35vh"></div>
+    <div class="svg-border-rounded text-white">-->
         <!-- Rounded SVG Border-->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
     </div>
 </section>
 <section class="bg-white pb-10">
@@ -463,10 +492,24 @@
                 <div class="small text-gray-500">You can unsubscribe at any time.</div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- Footer Rounded SVG Border-->
-    <div class="svg-border-rounded text-dark">
+    <!--<div class="svg-border-rounded text-dark">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
     </div>
-</section>
-{% endblock content %}
+</section>-->
+
+{% include 'includes/footer.html' %}
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+            <script src="{% static 'js/scripts.js' %}"></script>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                AOS.init({
+                    disable: 'mobile',
+                    duration: 600,
+                    once: true,
+                });
+            </script>
+        </body>
+    </html>

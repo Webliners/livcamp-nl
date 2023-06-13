@@ -1,18 +1,38 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 {% load static%}
+    <html lang="nl">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            <meta name="description" property="og:description" content="Ontdek onze camperartikelen en maak je camperavonturen comfortabeler." />
+            <meta name="keywords" content="Camperwebshop">
+            <meta name="author" content="Melanie Otten" />
+            <meta property="og:url" content="https://livcamp.nl/campershop/" />
+            <meta property="og:title" content="Campershop - maak jouw camperreis compleet" />
+            <meta property="og:image" content="{% static 'assets/img/camperroutes/camperroutes.jpg' %}"/>
+            <meta property="og:image:alt" content="Campers onderweg" />
+            <title>{% block title %}Campershop{% endblock %}</title>
+            <link href="{% static 'css/styles.css' %} " rel="stylesheet" />
+            <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}" />
+            <link rel="stylesheet" type="text/css" href="dist/device-mockups.min.css">
+            <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
+        </head>
+        <body>
 
-{% block content %}
+
+{% include 'includes/navbar.html' %}
                     <!-- Page Header-->
-                    <header class="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-80" style="background-image: url('https://source.unsplash.com/faEfWCdOKIg/1500x900')">
+                    <header class="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-40" style="background-image: url('{% static 'assets/img/shop/campershop.jpg'%}');" alt="campershop">
                         <div class="page-header-ui-content py-5 position-relative">
                             <div class="container px-5">
                                 <div class="row gx-5 justify-content-center">
                                     <div class="col-xl-8 col-lg-10 text-center">
                                         <div data-aos="fade-up">
                                             <h1 class="page-header-ui-title">Campershop</h1>
-                                            <p class="page-header-ui-text">Alles wat je nodig hebt voor jouw avontuur op wielen</p>
+                                            <p class="page-header-ui-text">Maak jouw camperreis compleet.</p>
                                         </div>
-                                        <a class="btn btn-primary fw-500" href="#get-started" data-aos="fade-up" data-aos-delay="100">Get Started</a>
                                     </div>
                                 </div>
                             </div>
@@ -22,141 +42,144 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
                         </div>
                     </header>
-                    <section class="bg-light py-10">
+
+                    <!--Assortiment-->
+                    <section class="bg-white py-10">
                         <div class="container px-5">
-                            <h2 class="mb-4">Recent postings</h2>
+                            <h2 class="display-4 fw-500 text-center mb-5">Ons assortiment.</h2>
                             <div class="row gx-5">
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$115</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/tG36rvCeqng/800x500" alt="..." />
+                                    <a class="card lift h-100" href="https://www.bol.com/nl/nl/p/livcamp-camper-reisdagboek/9300000080100805/" target="_blank">
+                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 20,95</div>
+                                        <img class="card-img-top" src="{% static 'assets/img/reisdagboek/reisdagboek-cover.png'%}" alt="Camper reisdagboek" />
                                         <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Gray Bicycle</div>
-                                            <div class="text-xs text-gray-500">Readcaster, CO &middot; 2 days ago</div>
+                                            <div class="card-title text-center small mb-0">Camper reisdagboek</div>
+                                            <div class="text-xs text-center text-gray-500">Ga met de camper op reis, houd je avonturen bij in dit camper reisdagboekje en deel het met vrienden, familie en kennissen. En bewaar het als een herinnering voor later. Want wie van zijn herinneringen geniet leeft tweemaal.</div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$29</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/nHOz7sp5nHE/800x500" alt="..." />
+                            <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 7,50</div>
+                                <img class="card-img-top" src="{% static 'assets/img/camperroutes/cover-duitse-alpen-route.jpg'%}" alt="Cover camperreis Duitse Alpenroute" />
+                                <div class="card-body p-3">
+                                    <div class="card-title text-center small mb-2">Duitse Alpenroute</div>
+                                    <div class="text-xs text-center text-gray-500">Deze camper reisgids brengt je in 7 dagen langs de Duitse Alpenroute. In deze gids zijn camperplaatsen en leuke to do’s opgenomen. Je ontvangt de camperroute per email in PDF bestand.</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
+                            <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 7,50</div>
+                                <img class="card-img-top" src="{% static 'assets/img/camperroutes/cover-route-zuid-noorwegen.jpg'%}" alt="Cover camperroute Zuid-Noorwegen" />
+                                <div class="card-body p-3">
+                                    <div class="card-title text-center small mb-2">Zuid-Noorwegen</div>
+                                    <div class="text-xs text-center text-gray-500">Deze camperreisgids brengt je langs de mooiste plekjes van Zuid-Noorwegen. Langs de route zijn campings, camperplaatsen, sanitaire voorzieningen en off-grid plaatsen aangegeven. Je ontvangt de camperroute per email in PDF bestand.</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
+                            <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 7,50</div>
+                                <img class="card-img-top" src="{% static 'assets/img/camperroutes/cover-route-elfstedentocht.jpg'%}" alt="Camperroute Elfstedentocht" />
+                                <div class="card-body p-3">
+                                    <div class="card-title text-center small mb-2">Elfstedentocht</div>
+                                    <div class="text-xs text-center text-gray-500">Deze camperreisgids brengt je in 11 dagen langs de elf steden in Friesland. In deze gids zijn camperplaatsen en leuke to do’s opgenomen. Je ontvangt de camperroute per email in PDF bestand.</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
+                            <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 7,50</div>
+                                <img class="card-img-top" src="{% static 'assets/img/camperroutes/cover-route-portugese-kust.png'%}" alt="Cover route Portugese kust" />
+                                <div class="card-body p-3">
+                                    <div class="card-title text-center small mb-2">Portugese kust</div>
+                                    <div class="text-xs text-center text-gray-500">Deze camper reisgids brengt je in 3 weken langs de Portugese Kust. In deze gids zijn camperplaatsen en leuke to do’s opgenomen. Je ontvangt de camperroute per email in PDF bestand.</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
+                            <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 7,50</div>
+                                <img class="card-img-top" src="{% static 'assets/img/camperroutes/cover-route-belgische-kust.png'%}" alt="Cover route Belgische kust" />
+                                <div class="card-body p-3">
+                                    <div class="card-title text-center small mb-2">Belgische kust</div>
+                                    <div class="text-xs text-center text-gray-500">Deze camper reisgids brengt je in 6 dagen langs de Belgische Kust. In deze gids zijn camperplaatsen en leuke to do’s opgenomen. Je ontvangt de camperroute per email in PDF bestand.</div>
+                                </div>
+                            </a>
+                        </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
+                                    <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 19,50</div>
+                                        <img class="card-img-top" src="{% static 'assets/img/shop/ekowax-starterset.jpeg'%}" alt="Ekowax starterset" />
                                         <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Hanimex Camera</div>
-                                            <div class="text-xs text-gray-500">Waterlow, CO &middot; 3 days ago</div>
+                                            <div class="card-title text-center small mb-0">Ekowax starterset</div>
+                                            <div class="text-xs text-center text-gray-500">Ekowax Wassen Zonder Water verwijdert vuil en vet zonder krassen en laat geen kalkvlekken achter. De unieke polymeren zorgen voor een wekenlange glans en bescherming. Ekowax Wassen zonder Water is een niet giftig en volledig biologisch afbreekbaar schoonmaakmiddel.</div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$999</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/GkFQEOubrCo/800x500" alt="..." />
+                                    <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 10,50</div>
+                                        <img class="card-img-top" src="{% static 'assets/img/shop/ekowax-cleaner.png'%}" alt="Ekowax cleaner" />
                                         <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Macbook Pro</div>
-                                            <div class="text-xs text-gray-500">Waterlow, CO &middot; 4 hours ago</div>
+                                            <div class="card-title text-center small mb-0">Ekowax Cleaner</div>
+                                            <div class="text-xs text-center text-gray-500">Dit product is zowel een allesreiniger als een onderhoudsreiniger en bij het gebruik wordt er een aangename frisse lentebloem geur verspreid. Ekowax Cleaner werkt oppervlakte reinigend, heeft een intensieve reinigingskracht en is NTA vrij.</div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$19</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/3bdSGpKVAmk/800x500" alt="..." />
+                                    <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 15,95</div>
+                                        <img class="card-img-top" src="{% static 'assets/img/shop/ekowax-glascoating.png'%}" alt="Ekowax glascoating" />
                                         <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Assorted Skin Care</div>
-                                            <div class="text-xs text-gray-500">Waterlow, CO &middot; 29 minutes ago</div>
+                                            <div class="card-title text-center small mb-0">Ekowax glascoating</div>
+                                            <div class="text-xs text-center text-gray-500">Ekowax glas(nano)coating beschermt en coat alle soorten glas. Dit product kan zowel binnen als buiten worden gebruikt en geeft een langdurig, streeploos en stralend schoon doorzichtig oppervlak.</div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$59</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/w9IHmVSNBfU/800x500" alt="..." />
+                                    <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 19,95</div>
+                                        <img class="card-img-top" src="{% static 'assets/img/shop/ammovit-starterset.png'%}" alt="Ammovit starterset" />
                                         <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Brown Ukulele</div>
-                                            <div class="text-xs text-gray-500">Readcaster, CO &middot; 3 days ago</div>
+                                            <div class="card-title text-center small mb-0">Ammovit starterset</div>
+                                            <div class="text-xs text-center text-gray-500">Biologisch schoonmaak pakket. Ideaal pakket om het camperseizoen te beginnen.
+                                            Inhoud
+                                            1 x Ammovit® Mobil  (1 kg)
+                                            1 x doseerschep
+                                            4 x zelfoplossend Toilettenpapier
+                                            1 x universele doek van natuurlijke vezels
+                                            1 x universele reiniger 500 ml</div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$249</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/bpg-ngqrPc8/800x500" alt="..." />
+                                    <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 39,95</div>
+                                        <img class="card-img-top" src="{% static 'assets/img/shop/ammovit-5kg.jpeg'%}" alt="Ammovit 5kg" />
                                         <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Leather Sofa</div>
-                                            <div class="text-xs text-gray-500">Readcaster, CO &middot; 2 hours ago</div>
+                                            <div class="card-title text-center small mb-0">Ammovit 5kg</div>
+                                            <div class="text-xs text-center text-gray-500">Ammovit is een ecologisch additief voor het chemisch toilet en de vuilwatertank in de camper. Zo voorkom je onaangename geuren en verstoppingen. Eenvoudig in gebruik en biologisch afbreekbaar.</div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$219</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/fZuleEfeA1Q/800x500" alt="..." />
+                                    <a class="card lift h-100" href="mailto:info@livcamp.nl">
+                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">€ 12,95</div>
+                                        <img class="card-img-top" src="{% static 'assets/img/shop/ammovit-1kg.jpeg'%}" alt="Ammovit 1kg" />
                                         <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Green Suede Sofa</div>
-                                            <div class="text-xs text-gray-500">Waterlow, CO &middot; 2 days ago</div>
+                                            <div class="card-title text-center small mb-0">Ammovit 1kg</div>
+                                            <div class="text-xs text-center text-gray-500">Ammovit is een ecologisch additief voor het chemisch toilet en de vuilwatertank in de camper. Zo voorkom je onaangename geuren en verstoppingen. Eenvoudig in gebruik en biologisch afbreekbaar.</div>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$89</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/rjhAiP3cj9E/800x500" alt="..." />
-                                        <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Metal Chairs</div>
-                                            <div class="text-xs text-gray-500">Readcaster, CO &middot; 5 days ago</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$89</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/5ba6j8d_oXY/800x500" alt="..." />
-                                        <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Wireless Earbuds</div>
-                                            <div class="text-xs text-gray-500">Readcaster, CO &middot; 1 month ago</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$34,999</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/ESoE_buQvNQ/800x500" alt="..." />
-                                        <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Muscle Car</div>
-                                            <div class="text-xs text-gray-500">Waterlow, CO &middot; 1 week ago</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$69</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/zuE9jsaVHuA/800x500" alt="..." />
-                                        <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Hardwood Dresser</div>
-                                            <div class="text-xs text-gray-500">Waterlow, CO &middot; 2 weeks ago</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 mb-5">
-                                    <a class="card lift h-100" href="#!">
-                                        <div class="card-flag card-flag-dark card-flag-top-right card-flag-lg">$9,999</div>
-                                        <img class="card-img-top" src="https://source.unsplash.com/WuRsjF4iZK0/800x500" alt="..." />
-                                        <div class="card-body p-3">
-                                            <div class="card-title small mb-0">Classic Motorcycle</div>
-                                            <div class="text-xs text-gray-500">Readcaster, CO &middot; 1 week ago</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="mb-10">
-                                <a class="text-arrow-icon" href="#!">
-                                    See more deals near you
-                                    <i data-feather="arrow-right"></i>
-                                </a>
-                            </div>
-                            <h2 class="mb-4">Browse Categories</h2>
+                            
+                            <!--Categorien-->
+                            <!--<h2 class="mb-4">Browse Categories</h2>
                             <div class="row gx-5">
                                 <div class="col-lg-3 col-md-6 mb-5">
-                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-red" href="#!">
+                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-red" href="mailto:info@livcamp.nl">
                                         <div class="card-body text-center">
                                             <div class="icon-stack icon-stack-xl bg-red text-white mb-2"><i class="fas fa-car"></i></div>
                                             <div class="small text-gray-600">Cars</div>
@@ -164,7 +187,7 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-6 mb-5">
-                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-orange" href="#!">
+                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-orange" href="mailto:info@livcamp.nl">
                                         <div class="card-body text-center">
                                             <div class="icon-stack icon-stack-xl bg-orange text-white mb-2"><i class="fas fa-home"></i></div>
                                             <div class="small text-gray-600">Housing</div>
@@ -172,7 +195,7 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-6 mb-5">
-                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-yellow" href="#!">
+                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-yellow" href="mailto:info@livcamp.nl">
                                         <div class="card-body text-center">
                                             <div class="icon-stack icon-stack-xl bg-yellow text-white mb-2"><i class="fas fa-gift"></i></div>
                                             <div class="small text-gray-600">Free</div>
@@ -180,7 +203,7 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-6 mb-5">
-                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-green" href="#!">
+                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-green" href="mailto:info@livcamp.nl">
                                         <div class="card-body text-center">
                                             <div class="icon-stack icon-stack-xl bg-green text-white mb-2"><i class="fas fa-mobile-alt"></i></div>
                                             <div class="small text-gray-600">Tech</div>
@@ -188,7 +211,7 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-cyan" href="#!">
+                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-cyan" href="mailto:info@livcamp.nl">
                                         <div class="card-body text-center">
                                             <div class="icon-stack icon-stack-xl bg-cyan text-white mb-2"><i class="fas fa-couch"></i></div>
                                             <div class="small text-gray-600">Furniture</div>
@@ -196,7 +219,7 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-blue" href="#!">
+                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-blue" href="mailto:info@livcamp.nl">
                                         <div class="card-body text-center">
                                             <div class="icon-stack icon-stack-xl bg-blue text-white mb-2"><i class="fas fa-briefcase"></i></div>
                                             <div class="small text-gray-600">Jobs</div>
@@ -204,7 +227,7 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-purple" href="#!">
+                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-purple" href="mailto:info@livcamp.nl">
                                         <div class="card-body text-center">
                                             <div class="icon-stack icon-stack-xl bg-purple text-white mb-2"><i class="fas fa-motorcycle"></i></div>
                                             <div class="small text-gray-600">Leisure</div>
@@ -212,69 +235,78 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
-                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-pink" href="#!">
+                                    <a class="card lift border-top-0 border-start-0 border-end-0 border-bottom-lg border-pink" href="mailto:info@livcamp.nl">
                                         <div class="card-body text-center">
                                             <div class="icon-stack icon-stack-xl bg-pink text-white mb-2"><i class="fas fa-shopping-cart"></i></div>
                                             <div class="small text-gray-600">Other</div>
                                         </div>
                                     </a>
                                 </div>
+                            </div>-->
+                            <!--Producten bestellen-->
+                            <div class="card z-1 mt-5 mb-n10">
+                                <div class="card-body text-center py-5">
+                                    <h2 class="mb-3">Producten bestellen?</h2>
+                                    <a class="btn btn-primary fw-500" href="mailto:info@livcamp.nl" target="_blank">Mail ons</a>
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                    <hr class="my-0" />
+                    <!--Linkjes-->
+                    <!--<hr class="my-0" />
                     <section class="bg-light py-10">
                         <div class="container px-5">
                             <h2 class="mb-4">Browse by city</h2>
                             <div class="row gx-5">
                                 <div class="col-lg-3 col-md-6">
-                                    <div class="mb-2"><a href="#!">Atlanta, GA</a></div>
-                                    <div class="mb-2"><a href="#!">Austin, TX</a></div>
-                                    <div class="mb-2"><a href="#!">Baltimore, MD</a></div>
-                                    <div class="mb-2"><a href="#!">Boston, MA</a></div>
-                                    <div class="mb-2"><a href="#!">Chicago, IL</a></div>
-                                    <div class="mb-2"><a href="#!">Cleveland, OH</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Atlanta, GA</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Austin, TX</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Baltimore, MD</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Boston, MA</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Chicago, IL</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Cleveland, OH</a></div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
-                                    <div class="mb-2"><a href="#!">Columbus, OH</a></div>
-                                    <div class="mb-2"><a href="#!">Dallas, TX</a></div>
-                                    <div class="mb-2"><a href="#!">Denver, CO</a></div>
-                                    <div class="mb-2"><a href="#!">Detroit, MI</a></div>
-                                    <div class="mb-2"><a href="#!">Houston, TX</a></div>
-                                    <div class="mb-2"><a href="#!">Las Vegas, NV</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Columbus, OH</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Dallas, TX</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Denver, CO</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Detroit, MI</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Houston, TX</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Las Vegas, NV</a></div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
-                                    <div class="mb-2"><a href="#!">Los Angeles, CA</a></div>
-                                    <div class="mb-2"><a href="#!">Miami, FL</a></div>
-                                    <div class="mb-2"><a href="#!">Nashville, TN</a></div>
-                                    <div class="mb-2"><a href="#!">New York, NY</a></div>
-                                    <div class="mb-2"><a href="#!">Orlando, FL</a></div>
-                                    <div class="mb-2"><a href="#!">Philadelphia, PA</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Los Angeles, CA</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Miami, FL</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Nashville, TN</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">New York, NY</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Orlando, FL</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Philadelphia, PA</a></div>
                                 </div>
                                 <div class="col-lg-3 col-md-6">
-                                    <div class="mb-2"><a href="#!">Phoenix, AZ</a></div>
-                                    <div class="mb-2"><a href="#!">Portland, OR</a></div>
-                                    <div class="mb-2"><a href="#!">San Francisco, CA</a></div>
-                                    <div class="mb-2"><a href="#!">Seattle, WA</a></div>
-                                    <div class="mb-2"><a href="#!">Tampa, FL</a></div>
-                                    <div class="mb-2"><a href="#!">See more...</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Phoenix, AZ</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Portland, OR</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">San Francisco, CA</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Seattle, WA</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">Tampa, FL</a></div>
+                                    <div class="mb-2"><a href="mailto:info@livcamp.nl">See more...</a></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+                        <!-- Footer Rounded SVG Border-->
                         <div class="svg-border-rounded text-dark">
-                            <!-- Rounded SVG Border-->
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
                         </div>
                     </section>
-{% endblock content %}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.0/lity.min.js"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init({
-                disable: 'mobile',
-                duration: 600,
-                once: true,
-            });
-        </script>
+
+{% include 'includes/footer.html' %}
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+            <script src="{% static 'js/scripts.js' %}"></script>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                AOS.init({
+                    disable: 'mobile',
+                    duration: 600,
+                    once: true,
+                });
+            </script>
+        </body>
+    </html>

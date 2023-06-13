@@ -1,164 +1,195 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 {% load static%}
+    <html lang="nl">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            <meta name="description" property="og:description" content="Avontuurlijke camperreis maken? Bekijk hier ons aanbod verre camperreizen met eigen en gehuurde camper." />
+            <meta name="keywords" content="Camperreizen">
+            <meta name="author" content="Melanie Otten" />
+            <meta property="og:url" content="https://livcamp.nl/camperreizen/" />
+            <meta property="og:title" content="Avontuurlijke camperreizen" />
+            <meta property="og:image" content="{% static 'assets/img/camperreizen/camperreis-albanie.jpg' %}"/>
+            <meta property="og:image:alt" content="Camperreis Albanië" />
+            <title>{% block title %}Camperreizen{% endblock %}</title>
+            <link href="{% static 'css/styles.css' %} " rel="stylesheet" />
+            <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}" />
+            <link rel="stylesheet" type="text/css" href="dist/device-mockups.min.css">
+            <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
+        </head>
+        <body>
 
-{% block content %}
-                    <!-- Page Header-->
-                    <header class="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-40" style="background-image: url('{% static 'assets/img/camperreizen/avontuurlijke-camperreizen.jpg'%}');">
-                        <div class="page-header-ui-content py-5 position-relative">
-                            <div class="container px-5">
-                                <div class="row gx-5 justify-content-center">
-                                    <div class="col-xl-8 col-lg-10 text-center">
-                                        <div data-aos="fade-up">
-                                            <h1 class="page-header-ui-title">Camperreizen</h1>
-                                            <p class="page-header-ui-text">Avontuurlijke camperreizen</p>
-                                        </div>
-                                        <a class="btn btn-primary fw-500" href="https://tailormade-expeditions.nl/" data-aos="fade-up" data-aos-delay="100">Ontdek alle camperreizen</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="svg-border-rounded text-white">
-                            <!-- Rounded SVG Border-->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
-                        </div>
-                    </header>
-                    <!--USP's-->
-                    <section class="bg-white py-10" id="get-started">
-                        <div class="container px-5">
-                            <div class="row gx-5 text-center">
-                                <div class="col-lg-4 mb-5 mb-lg-0">
-                                    <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4"><i data-feather="smile"></i></div>
-                                    <h2>Onbezorgd genieten</h2>
-                                    <p class="mb-0">alles is voor je geregeld</p>
-                                </div>
-                                <div class="col-lg-4 mb-5 mb-lg-0">
-                                    <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4"><i data-feather="user"></i></div>
-                                    <h2>Kleine groepen</h2>
-                                    <p class="mb-0">maximaal 10 campers</p>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4"><i data-feather="twitter"></i></div>
-                                    <h2>Individuele vrijheid</h2>
-                                    <p class="mb-0">staat voorop!</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="svg-border-rounded text-white">
-                            <!-- Rounded SVG Border-->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
-                        </div>
-                    </section>
-                    <!--Quote-->
-                    <section class="bg-img-cover overlay overlay-40 py-5" style="background-image: url('{% static 'assets/img/camperreizen/camperreizen.jpg'%}');">
-                        <div class="container px-5 position-relative">
-                            <div class="row gx-5 justify-content-center">
-                                <div class="col-lg-10">
-                                    <div class="display-6 text-center py-5 my-10 text-white">
-                                        Ga mee met een van de <span class="text-primary">georganiseerde camperreizen</span>. En beleef in kleine groepen <span class="text-primary">onvergetelijke avonturen</span>!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!--Camperreizen aanbod-->
-                    <section class="bg-light py-10">
-                        <div class="container px-5 z-1">
-                            <h2 class="text-center mb-5">Camperreizen aanbod</h2>
-                            <div class="card mb-5" data-aos="fade-right">
-                                <div class="row g-0">
-                                    <div class="col-md-6"><img class="img-fluid" src="https://source.unsplash.com/6LBBOwkPzyQ/800x550" alt="..." /></div>
-                                    <div class="col-md-6">
-                                        <div class="card-body d-flex align-items-center justify-content-center h-100 flex-column">
-                                            <h3 class="card-title fw-bold text-uppercase mb-2">Cocooil</h3>
-                                            <p class="card-text fw-light mb-4">Body Oil</p>
-                                            <a class="btn btn-outline-dark fw-500" href="#!">View Case Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb-5" data-aos="fade-left">
-                                <div class="row g-0">
-                                    <div class="col-md-6 order-1 order-md-0">
-                                        <div class="card-body d-flex align-items-center justify-content-center h-100 flex-column">
-                                            <h3 class="card-title fw-bold text-uppercase mb-2">Balitello</h3>
-                                            <p class="card-text fw-light mb-4">Designer Socks</p>
-                                            <a class="btn btn-outline-dark fw-500" href="#!">View Case Study</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 order-0 order-md-1"><img class="img-fluid" src="https://source.unsplash.com/XfHvAwu6E8E/800x550" alt="..." /></div>
-                                </div>
-                            </div>
-                            <div class="card" data-aos="fade-right">
-                                <div class="row g-0">
-                                    <div class="col-md-6"><img class="img-fluid" src="https://source.unsplash.com/7LNatQYMzm4/800x550" alt="..." /></div>
-                                    <div class="col-md-6">
-                                        <div class="card-body d-flex align-items-center justify-content-center h-100 flex-column">
-                                            <h3 class="card-title fw-bold text-uppercase mb-2">Headphones</h3>
-                                            <p class="card-text fw-light mb-4">Premium Audio</p>
-                                            <a class="btn btn-outline-dark fw-500" href="#!">View Case Study</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-            <!--Reviews-->
-                <section class="bg-white py-10">
-                    <div class="container px-5">
-                        <div class="row gx-5">
-                            <div class="col-lg-6 mb-5 mb-lg-0 divider-right">
-                                <div class="testimonial p-lg-5">
-                                    <div class="mb-3 text-yellow">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p class="testimonial-quote text-primary">"We hebben altijd veel zelf ondernomen en dit was onze eerste groepsreis! Het was geweldig, we hebben zoveel meer gezien dan toen we zelf op pad gingen! Bovendien heeft de leuke groep, de goede reisbegeleiding en natuurlijk het land zelf (zeker de westelijke Sahara) dit tot een prachtige reis gemaakt!"</p>
-                                    <div class="testimonial-name">Gerda en Jan</div>
-                                    <div class="testimonial-position">23-12-2021</div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="testimonial p-lg-5">
-                                    <div class="mb-3 text-yellow">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p class="testimonial-quote text-primary">"De reis heeft onze verwachtingen overtroffen, vooral de hartelijkheid en behulpzaamheid van de inwoners, maar ook het land zelf met de verschillende natuur en de vele oudheden en culturen die er zijn. We hebben erg genoten!!!!!!!!!"</p>
-                                    <div class="testimonial-name">Henk en Wieke</div>
-                                    <div class="testimonial-position">13-02-2022</div>
-                                </div>
-                            </div>
-                            <!--Meer camperreizen-->
-                                <div class="card z-1 mt-5 mb-n10">
-                                    <div class="card-body text-center py-5">
-                                        <h2 class="mb-3">Ontdek meer camperreizen</h2>
-                                        <a class="btn btn-primary fw-500" href="https://tailormade-expeditions.nl/">Meer camperreizen</a>
 
-                                </div>
+{% include 'includes/navbar.html' %}
+
+        <!-- Page Header-->
+        <header class="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-40" style="background-image: url('{% static 'assets/img/camperreizen/avontuurlijke-camperreizen.jpg'%}');">
+            <div class="page-header-ui-content py-5 position-relative">
+                <div class="container px-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-xl-8 col-lg-10 text-center">
+                            <div data-aos="fade-up">
+                                <h1 class="page-header-ui-title">Avontuurlijke camperreizen</h1>
+                                <p class="page-header-ui-text">Ontdek de wereld op wielen.</p>
+                            </div>
+                            <a class="btn btn-primary fw-500" href="https://tailormade-expeditions.nl/" target="_blank" data-aos="fade-up" data-aos-delay="100">Ontdek alle camperreizen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="svg-border-rounded text-white">
+                <!-- Rounded SVG Border-->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+            </div>
+        </header>
+
+        <!--USP's-->
+        <section class="bg-white py-10" id="get-started">
+            <div class="container px-5">
+                <div class="row gx-5 text-center">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4"><i data-feather="smile"></i></div>
+                        <h2>Onbezorgd genieten</h2>
+                        <p class="mb-0">alles is voor je geregeld</p>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4"><i data-feather="user"></i></div>
+                        <h2>Kleine groepen</h2>
+                        <p class="mb-0">maximaal 10 campers</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4"><i data-feather="twitter"></i></div>
+                        <h2>Individuele vrijheid</h2>
+                        <p class="mb-0">staat voorop!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="svg-border-rounded text-white">
+                <!-- Rounded SVG Border-->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+            </div>
+        </section>
+
+        <!--Quote-->
+        <section class="bg-img-cover overlay overlay-40 py-5" style="background-image: url('{% static 'assets/img/camperreizen/camperreizen.jpg'%}');">
+            <div class="container px-5 position-relative">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="display-6 text-center py-5 my-10 text-white">
+                            Ga mee met een van de <span class="text-primary">georganiseerde camperreizen</span>. En beleef in kleine groepen <span class="text-primary">onvergetelijke avonturen</span>!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--Camperreizen aanbod-->
+        <section class="bg-light py-10">
+            <div class="container px-5 z-1">
+                <h2 class="display-4 fw-500 text-center mb-5">Camperreizen aanbod.</h2>
+                <div class="card mb-5" data-aos="fade-right">
+                    <div class="row g-0">
+                        <div class="col-md-6"><img class="img-fluid" src="{% static 'assets/img/camperreizen/camperreis-albanie.jpg'%}" alt="Camperreis Albanië" /></div>
+                        <div class="col-md-6">
+                            <div class="card-body d-flex align-items-center justify-content-center h-100 flex-column">
+                                <h3 class="card-title fw-bold text-uppercase mb-2">Noord-Macedonië & Albanië</h3>
+                                <p class="card-text mb-4">Onze camperreis door Noord-Macedonië en Albanië brengt u naar <strong>fascinerende bestemmingen aan de randen van Europa</strong>. Het is een reis van drie weken door schitterende landen met een ongekend <strong>rijke natuur, cultuur en een vriendelijke en gastvrije bevolking</strong>. Landen die nog niet overspoelt worden door toeristen en waar het heerlijk vertoeven is.</p>
+                                <a class="btn btn-primary fw-500" href="https://tailormade-expeditions.nl/actieve-camperreis-noord-macedonie-en-albanie/" target="_blank">Ontdek meer</a>
                             </div>
                         </div>
                     </div>
-                    
-                        <!-- Footer Rounded SVG Border-->
-                        <div class="svg-border-rounded text-dark">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                </div>
+                <div class="card mb-5" data-aos="fade-left">
+                    <div class="row g-0">
+                        <div class="col-md-6 order-1 order-md-0">
+                            <div class="card-body d-flex align-items-center justify-content-center h-100 flex-column">
+                                <h3 class="card-title fw-bold text-uppercase mb-2">Het andere Marokko</h3>
+                                <p class="card-text text-center">Onze Proef Marokko camperreis laat u in 22 dagen veel verschillende delen van Marokko zien. We reizen door de <strong>Hoge Atlas</strong>, door de imposante <strong>Todrakloof</strong> en de groene <strong>Dadesvallei</strong>, langs <strong>palmoases</strong>, door de <strong>“vallei van de 1000 kashba’s”</strong> en ervaren de woestijn. Ook bezoeken we een aantal koningssteden en laten we u kennismaken met deze hele andere wereld.
+                                </p>
+                                <a class="btn btn-primary fw-500" href="https://tailormade-expeditions.nl/ontdek-het-andere-marokko/" target="_blank" >Ontdek meer</a>
+                            </div>
                         </div>
-                    </section>
-{% endblock content %}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.0/lity.min.js"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-            AOS.init({
-                disable: 'mobile',
-                duration: 600,
-                once: true,
-            });
-        </script>
+                        <div class="col-md-6 order-0 order-md-1"><img class="img-fluid" src="{% static 'assets/img/camperreizen/camperreis-marokko.jpg'%}" alt="Camperreis Marokko" /></div>
+                    </div>
+                </div>
+                <div class="card" data-aos="fade-right">
+                    <div class="row g-0">
+                        <div class="col-md-6"><img class="img-fluid" src="{% static 'assets/img/camperreizen/camperreis-turkije.jpg'%}" alt="Camperreis Turkije, Georgië en Armenië" /></div>
+                        <div class="col-md-6">
+                            <div class="card-body d-flex align-items-center justify-content-center h-100 flex-column">
+                                <h3 class="card-title fw-bold text-uppercase mb-2">Turkije, Georgië en Armenië</h3>
+                                <p class="card-text mb-4">Reis met uw eigen camper mee door onbekende landen in de Kaukasus. Landen die liggen op <strong>de “grens” van Europa en Azië</strong> en waar je invloeden van verschillende landen samen ziet komen. Landen ook met een <strong>rijke religieuze cultuur</strong> en die ons verrast hebben qua landschap en <strong>grote gastvrijheid</strong> van de bevolking.</p>
+                                <a class="btn btn-primary fw-500" href="https://tailormade-expeditions.nl/camperreis-naar-turkije-georgie-armenie/" target="_blank">Ontdek meer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!--Reviews-->
+    <section class="bg-white py-10">
+        <div class="container px-5">
+            <h2 class="display-4 fw-500 text-center mb-5">Reviews van reizigers.</h2>
+            <div class="row gx-5">
+                <div class="col-lg-6 mb-5 mb-lg-0 divider-right">
+                    <div class="testimonial p-lg-5">
+                        <div class="mb-3 text-yellow">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote text-primary">"We hebben altijd veel zelf ondernomen en dit was onze eerste groepsreis! Het was geweldig, we hebben zoveel meer gezien dan toen we zelf op pad gingen! Bovendien heeft de leuke groep, de goede reisbegeleiding en natuurlijk het land zelf (zeker de westelijke Sahara) dit tot een prachtige reis gemaakt!"</p>
+                        <div class="testimonial-name">Gerda en Jan</div>
+                        <div class="testimonial-position">23-12-2021</div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial p-lg-5">
+                        <div class="mb-3 text-yellow">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote text-primary">"De reis heeft onze verwachtingen overtroffen, vooral de hartelijkheid en behulpzaamheid van de inwoners, maar ook het land zelf met de verschillende natuur en de vele oudheden en culturen die er zijn. We hebben erg genoten!!!!!!!!!"</p>
+                        <div class="testimonial-name">Henk en Wieke</div>
+                        <div class="testimonial-position">13-02-2022</div>
+                    </div>
+                </div>
+                <!--Meer camperreizen-->
+                <div class="card z-1 mt-5 mb-n10">
+                    <div class="card-body text-center py-5">
+                        <h2 class="mb-3">Ontdek meer camperreizen</h2>
+                        <a class="btn btn-primary fw-500" href="https://tailormade-expeditions.nl/" target="_blank">Boek jouw avontuur!</a>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        <!-- Footer Rounded SVG Border-->
+        <div class="svg-border-rounded text-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+        </div>
+    </section>
+
+{% include 'includes/footer.html' %}
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+            <script src="{% static 'js/scripts.js' %}"></script>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                AOS.init({
+                    disable: 'mobile',
+                    duration: 600,
+                    once: true,
+                });
+            </script>
+        </body>
+    </html>
+
+

@@ -1,122 +1,92 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 {% load static%}
+    <html lang="nl">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+            <meta name="description" property="og:description" content="Vang jouw camperavonturen: Documenteer en koester jouw reisverhalen in ons speciale camper reisdagboek!">
+            <meta name="keywords" content="vacatures">
+            <meta name="author" content="Melanie Otten" />
+            <meta property="og:url" content="https://livcamp.nl/vacatures/">
+            <meta property="og:title" content="Vacatures - sluit je aan bij ons avontuurlijke team!">
+            <meta property="og:image" content="{% static 'assets/img/algemeen/over-livcamp.jpg'%}">
+            <meta property="og:image:alt" content="Vacatures - sluit je aan bij ons avontuurlijke team!" />
+            <title>{% block title %}Vacatures{% endblock %}</title>
+            <link href="{% static 'css/styles.css' %} " rel="stylesheet" />
+            <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}" />
+            <link rel="stylesheet" type="text/css" href="dist/device-mockups.min.css">
+            <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
+        </head>
+        <body>
 
-{% block content %}
 
-<!-- Page Header-->
-<header class="page-header-ui page-header-ui-dark bg-gradient-primary-to-secondary">
-    <div class="page-header-ui-content pt-10">
-        <div class="container px-5 text-center">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-lg-8">
-                    <h1 class="page-header-ui-title mb-3">Vacatures</h1>
-                    <p class="page-header-ui-text">Maak van je passie een betekenisvolle impact</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="svg-border-rounded text-white">
-        <!-- Rounded SVG Border-->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
-    </div>
-</header>
-<section class="bg-white py-10">
-    <div class="container px-5">
-        <div class="row gx-5 justify-content-center">
-            <div class="col-lg-10">
-                <div class="d-flex align-items-center justify-content-between">
-                    <h2 class="mb-0">Administration</h2>
-                    <div class="badge bg-primary-soft text-primary badge-marketing">3 Openings</div>
-                </div>
-                <hr class="mb-0" />
-                <ul class="list-group list-group-flush list-group-careers">
-                    <li class="list-group-item">
-                        <a href="#!">Senior Manager, Risk Management</a>
-                        <div class="small">Remote - US (San Francisco, CA)</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#!">Operations Manager</a>
-                        <div class="small">San Francisco, CA (HQ)</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#!">Administrative Assistant</a>
-                        <div class="small">Dallas, TX</div>
-                    </li>
-                </ul>
-                <div class="d-flex align-items-center justify-content-between">
-                    <h2 class="mb-0">Engineering</h2>
-                    <div class="badge bg-primary-soft text-primary badge-marketing">5 Openings</div>
-                </div>
-                <hr class="mb-0" />
-                <ul class="list-group list-group-flush list-group-careers">
-                    <li class="list-group-item">
-                        <a href="#!">Senior Software Engineer</a>
-                        <div class="small">Remote - US / Canada</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#!">Software Engineer</a>
-                        <div class="small">Remote - Global</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#!">Data Scientist</a>
-                        <div class="small">Remote - Global</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#!">Front End Engineer</a>
-                        <div class="small">San Francisco, CA (HQ)</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#!">Technical Director</a>
-                        <div class="small">San Francisco, CA (HQ)</div>
-                    </li>
-                </ul>
-                <div class="d-flex align-items-center justify-content-between">
-                    <h2 class="mb-0">Sales</h2>
-                    <div class="badge bg-primary-soft text-primary badge-marketing">4 Openings</div>
-                </div>
-                <hr class="mb-0" />
-                <ul class="list-group list-group-flush list-group-careers">
-                    <li class="list-group-item">
-                        <a href="#!">Sales Support Coordinator</a>
-                        <div class="small">Remote - US (San Francisco, CA)</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#!">Senior Sales Representative</a>
-                        <div class="small">Remove - US Northeast</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#!">Paid Search Specialist</a>
-                        <div class="small">Remote - Global</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#!">Junior Sales Representative</a>
-                        <div class="small">San Francisco, CA (HQ)</div>
-                    </li>
-                </ul>
-                <h4 class="mb-4">
-                    <div class="icon-stack bg-primary text-white me-2"><i data-feather="smile"></i></div>
-                    Work happier
-                </h4>
-                <p class="mb-5">Build amazing things with autonomy, self-direction, and a healthy work-life balance. We offer flexible work schedules for all of our employees and unlimited PTO. We also believe that if a job allows for it, you should work wherever you’re happiest.</p>
-                <h4 class="mb-4">
-                    <div class="icon-stack bg-primary text-white me-2"><i data-feather="trending-up"></i></div>
-                    Keep growing
-                </h4>
-                <p>Learn how you learn best. From books to conferences, you’ll get a yearly budget for your individual learning and development goals. If ebooks are more your style, you’ll get a brand new Kindle on your first day.</p>
-                <hr class="my-5" />
-                <div class="card bg-light shadow-none">
-                    <div class="card-body text-center p-5">
-                        <h2>Internships</h2>
-                        <p class="lead mb-4">Are you currently enrolled at a college or university and looking for hands-on experience while earning class credit? Take a look at our internship opportunities!</p>
-                        <a class="btn btn-primary fw-500" href="#!">Explore Internships</a>
+{% include 'includes/navbar.html' %}
+
+            <!-- Page Header-->
+            <header class="page-header-ui page-header-ui-dark bg-gradient-primary-to-secondary">
+                <div class="page-header-ui-content pt-10">
+                    <div class="container px-5 text-center">
+                        <div class="row gx-5 justify-content-center">
+                            <div class="col-lg-8">
+                                <h1 class="page-header-ui-title mb-3">Vacatures</h1>
+                                <p class="page-header-ui-text">Sluit je aan bij ons avontuurlijke team!</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="svg-border-rounded text-dark">
-        <!-- Rounded SVG Border-->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
-    </div>
-</section>
-{% endblock content %}
+                <div class="svg-border-rounded text-white">
+                    <!-- Rounded SVG Border-->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
+                </div>
+            </header>
+
+            <!--Vacatures-->
+            <section class="bg-white py-10">
+                <div class="container px-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-10">
+                            <h2 class="display-6 fw-500 text-center mb-5">Ontdek onze spannende vacatures en geef vorm aan de toekomst van camperreizen!</h2>
+                            <a class="post-archive-item" href="">
+                                <h3>Stage online marketing</h3>
+                                <p>Zoek je een dynamische en leerzame stage in de wereld van online marketing? Kom bij ons team en dompel jezelf onder in de opwindende reis van digitale strategieën, contentcreatie en sociale media. Bij www.livcamp.nl bieden we een stageplek waar je kunt groeien, experimenteren en je passie voor marketing kunt ontwikkelen. Doe praktijkervaring op, werk samen met ons gepassioneerde team en help mee om onze online aanwezigheid naar nieuwe hoogten te brengen. Ben jij klaar voor een stage vol uitdagingen en kansen? Sluit je dan aan bij ons avontuur en maak je stempel in de online marketingwereld!</p>
+                            </a>
+                            <div class="post-archive-meta">
+                                <img class="post-archive-meta-img" src="{% static "assets/img/favicon.png" %}">
+                                <div class="post-archive-meta-details">
+                                    <div class="post-archive-meta-details-name"><a href="{% url 'contact' %}">Contact Melanie</a></div>
+                                    <div class="post-archive-meta-details-date">Stageperiode 6 maanden</div>
+                                </div>
+                            </div>
+                            <hr class="my-5" />
+                            <a class="post-archive-item" href="#!">
+                                <h3>Vrijwilliger: locaties toevoegen aan de camperplaatsen app</h3>
+                                <p>Ben jij regelmatig met de camper op pad? En vind je het leuk om mee te helpen aan de Livcamp camperplaatsen app? Dan zijn wij op zoek naar jou! Mail voor de leuke voorwaarden naar: melanie@livcamp.nl</p>
+                            </a>
+                            <div class="post-archive-meta">
+                                <img class="post-archive-meta-img" src="{% static "assets/img/favicon.png" %}">
+                                <div class="post-archive-meta-details">
+                                    <div class="post-archive-meta-details-name"><a href="{% url 'contact' %}">Contact Melanie</a></div>
+                                    <div class="post-archive-meta-details-date">Onbepaalde tijd</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+{% include 'includes/footer.html' %}
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+            <script src="{% static 'js/scripts.js' %}"></script>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+                AOS.init({
+                    disable: 'mobile',
+                    duration: 600,
+                    once: true,
+                });
+            </script>
+        </body>
+    </html>

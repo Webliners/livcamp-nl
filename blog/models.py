@@ -48,6 +48,7 @@ class Post(models.Model):
     snippet = models.CharField(max_length=255, blank=True, null=True)
     body = RichTextField(blank=True, null=True)
     header_image = models.ImageField(null=True, blank=True, upload_to="images/") 
+    updated = models.DateField(null=True, blank=True)
     #likes = models.ManyToManyField(User, related_name='blog_posts')
 
     def total_likes(self):

@@ -1,4 +1,6 @@
 from django.shortcuts import render
+#from django.views.generic import TemplateView, View
+from .models import Page
 
 # Create your views here.
 
